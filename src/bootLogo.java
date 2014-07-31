@@ -1,4 +1,6 @@
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /*
@@ -33,8 +35,8 @@ public class bootLogo extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        celular = new javax.swing.JTextField();
+        nombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -56,8 +58,14 @@ public class bootLogo extends javax.swing.JFrame {
         jLabel3.setText("Celular:");
         jLabel3.setToolTipText("");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 160, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 160, -1));
+        jPanel1.add(celular, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 160, -1));
+
+        nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nombreKeyTyped(evt);
+            }
+        });
+        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 160, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -86,22 +94,45 @@ public class bootLogo extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if (jTextField1.getText().length()!=0 && jTextField2.getText().length()!=0)
+        if (nombre.getText().length()!=0 &&nombre.getText().length()<45 && celular.getText().length()==10||nombre.getText().length()!=0 &&nombre.getText().length()<45 && celular.getText().length()==8)
         {
-            variables.nombre=jTextField1.getText();
-            variables.contacto=jTextField2.getText();
+            
+            try
+            {
+            int aux=Integer.parseInt(celular.getText());
+            variables.nombre=nombre.getText();
+            variables.contacto=celular.getText();
             JOptionPane.showMessageDialog(null, "Bienvenido: " + variables.nombre);
             PantallaCelular fm = new PantallaCelular();
             fm.show();
             this.hide();
+            }
+            catch (Exception e)
+            {
+            JOptionPane.showMessageDialog(null, "Error de Usuario o Numero Incorrecto\nRecuerde que debe colocar un nombre valido y numero de 10 u 8 caracteres");
+            celular.setText("");
+                
+            }
+                    
+            
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "Error de Usuario o Numero Incorrecto");
-            jTextField1.setText("");
-            jTextField2.setText("");
+            JOptionPane.showMessageDialog(null, "Error de Usuario o Numero Incorrecto\nRecuerde que debe colocar un nombre valido y numero de 10 u 8 caracteres");
+            nombre.setText("");
+            celular.setText("");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreKeyTyped
+        // TODO add your handling code here:
+        String cadena = Character.toString(evt.getKeyChar()); 
+        Pattern p = Pattern.compile("[ \\p{Alpha} \\p{Space}]");  //Letras y espacio 
+        Matcher m = p.matcher(cadena);   
+        if(!m.find()){ 
+    evt.consume(); 
+}
+    }//GEN-LAST:event_nombreKeyTyped
 
     /**
      * @param args the command line arguments
@@ -139,12 +170,12 @@ public class bootLogo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField celular;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField nombre;
     // End of variables declaration//GEN-END:variables
 }
