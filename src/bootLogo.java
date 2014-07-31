@@ -58,6 +58,12 @@ public class bootLogo extends javax.swing.JFrame {
         jLabel3.setText("Celular:");
         jLabel3.setToolTipText("");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
+
+        celular.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                celularKeyTyped(evt);
+            }
+        });
         jPanel1.add(celular, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 160, -1));
 
         nombre.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -94,7 +100,7 @@ public class bootLogo extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if (nombre.getText().length()!=0 &&nombre.getText().length()<45 && celular.getText().length()==10||nombre.getText().length()!=0 &&nombre.getText().length()<45 && celular.getText().length()==8)
+        if (nombre.getText().length()!=0 &&nombre.getText().length()<31 && celular.getText().length()==10||nombre.getText().length()!=0 &&nombre.getText().length()<31 && celular.getText().length()==8)
         {
             
             try
@@ -126,13 +132,38 @@ public class bootLogo extends javax.swing.JFrame {
 
     private void nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreKeyTyped
         // TODO add your handling code here:
-        String cadena = Character.toString(evt.getKeyChar()); 
+         if (nombre.getText().length()<31) {
+             String cadena = Character.toString(evt.getKeyChar()); 
         Pattern p = Pattern.compile("[ \\p{Alpha} \\p{Space}]");  //Letras y espacio 
         Matcher m = p.matcher(cadena);   
         if(!m.find()){ 
     evt.consume(); 
-}
+        } 
+         }
+        else {
+            evt.setKeyChar('\0');
+        }
+        
+
     }//GEN-LAST:event_nombreKeyTyped
+
+    private void celularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_celularKeyTyped
+        // TODO add your handling code here:
+                  char c=evt.getKeyChar(); 
+              if (celular.getText().length()<11) {
+                  
+          if(Character.isDigit(c)==false) { 
+              getToolkit().beep(); 
+              evt.consume(); 
+               
+          }
+                  
+        } 
+              else {
+            evt.setKeyChar('\0');
+        }
+         
+    }//GEN-LAST:event_celularKeyTyped
 
     /**
      * @param args the command line arguments
