@@ -16,7 +16,7 @@ public class Conexion {
        boolean conexion=true; 
       //Aqui se va a iniciar el contacto con el servidor
        //Si si se pudo conectarse va a reproducir el menu inicial desde aqui
-       String menuinicial="Si usted es un pelana marque uno. si no marque dos";//Esto lo vas a pedir al servidor desde el metodo inicio de la clase RespuestaResulta del Package MetodosConexion
+       String menuinicial="";//Esto lo vas a pedir al servidor desde el metodo inicio de la clase RespuestaResulta del Package MetodosConexion
        LeeTexto.Lee(menuinicial);
        //Y regresaria verdadero
        //Si no pss solo regresa falso
@@ -26,14 +26,14 @@ public class Conexion {
     //Esto es lo que envia el celular
     public int mensajeconexion(String numero)
     {
-        return mensaje(numero);//Esto es lo que se regresa al celular
+        return mensaje(numero+1);//Esto es lo que se regresa al celular
     }
     
     
     
     public int mensaje(String numero)
     {
-        String menu="Usted es un pelana de todos modos";
+        String menu="";
         int opciones=2;
         //Parte de Lee
         //En este metodo se supone que se hara conexion con el servidor 
