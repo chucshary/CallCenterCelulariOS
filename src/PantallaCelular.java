@@ -84,6 +84,7 @@ public class PantallaCelular extends javax.swing.JFrame {
     String numero2= "9981347477";
     int esfinal=-1, menuopciones=9;
    int enviando=0; 
+   Conexion c= new Conexion();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -593,7 +594,6 @@ public class PantallaCelular extends javax.swing.JFrame {
         // TODO add your handling code here:
         //Ahora se supone que cuando" llame al servidor" invocare a la clase conectar
         //Primero creamos el objeto de dicha clase (osease el que nos da acceso a esa clase). Le llamaremos "c"
-        Conexion c = new Conexion();
         
         this.home.setVisible(false);
         this.msj.setVisible(false);
@@ -826,7 +826,6 @@ public class PantallaCelular extends javax.swing.JFrame {
         {
         enviando=1;
             
-            Conexion c= new Conexion();
             int opciones;
            
            if(esfinal==-1&&1<menuopciones)
@@ -903,7 +902,6 @@ public class PantallaCelular extends javax.swing.JFrame {
         {
             enviando=1;
             
-            Conexion c= new Conexion();
             int opciones;
            
            if(esfinal==-1&&2<menuopciones)
@@ -979,7 +977,6 @@ public class PantallaCelular extends javax.swing.JFrame {
         {
         
             enviando=1;
-            Conexion c= new Conexion();
             int opciones;
            
            if(esfinal==-1&&3<menuopciones)
@@ -1012,7 +1009,6 @@ public class PantallaCelular extends javax.swing.JFrame {
         {
         enviando=1;
             
-            Conexion c= new Conexion();
             int opciones;
            
            if(esfinal==-1&&4<menuopciones)
@@ -1044,7 +1040,6 @@ public class PantallaCelular extends javax.swing.JFrame {
             {
         enviando=1;
             
-            Conexion c= new Conexion();
             int opciones;
            
            if(esfinal==-1&&5<menuopciones)
@@ -1074,7 +1069,6 @@ public class PantallaCelular extends javax.swing.JFrame {
         {
         
             enviando=1;
-            Conexion c= new Conexion();
             int opciones;
            
            if(esfinal==-1&&6<menuopciones)
@@ -1105,7 +1099,6 @@ public class PantallaCelular extends javax.swing.JFrame {
         {
         
             enviando=1;
-            Conexion c= new Conexion();
             int opciones;
            
            if(esfinal==-1&&7<menuopciones)
@@ -1134,7 +1127,6 @@ public class PantallaCelular extends javax.swing.JFrame {
         {
         
             enviando=1;
-            Conexion c= new Conexion();
             int opciones;
            
            if(esfinal==-1&&8<menuopciones)
@@ -1165,7 +1157,6 @@ public class PantallaCelular extends javax.swing.JFrame {
         {
         
             enviando=1;
-            Conexion c= new Conexion();
             int opciones;
            
            if(esfinal==-1&&9<menuopciones)
