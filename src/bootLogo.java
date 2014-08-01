@@ -1,7 +1,9 @@
 
+import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /*
@@ -46,6 +48,7 @@ public class bootLogo extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        boton.setFont(new java.awt.Font("Agency FB", 1, 14)); // NOI18N
         boton.setText("Login");
         boton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,27 +57,29 @@ public class bootLogo extends javax.swing.JFrame {
         });
         jPanel1.add(boton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 550, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Celular:");
         jLabel3.setToolTipText("");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
 
+        celular.setFont(new java.awt.Font("Agency FB", 1, 14)); // NOI18N
         celular.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                celularKeyTyped(evt);
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                celularKeyPressed(evt);
             }
         });
         jPanel1.add(celular, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 160, -1));
 
+        nombre.setFont(new java.awt.Font("Agency FB", 1, 14)); // NOI18N
         nombre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                nombreKeyTyped(evt);
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombreKeyPressed(evt);
             }
         });
         jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 160, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre:");
         jLabel2.setToolTipText("");
@@ -130,40 +135,25 @@ public class bootLogo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonActionPerformed
 
-    private void nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreKeyTyped
+    private void nombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreKeyPressed
         // TODO add your handling code here:
-         if (nombre.getText().length()<31) {
-             String cadena = Character.toString(evt.getKeyChar()); 
-        Pattern p = Pattern.compile("[ \\p{Alpha} \\p{Space}]");  //Letras y espacio 
-        Matcher m = p.matcher(cadena);   
-        if(!m.find()){ 
-    evt.consume(); 
-        } 
-         }
-        else {
-            evt.setKeyChar('\0');
+         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            try {
+               celular.requestFocus();
+            } catch (HeadlessException e) {
+            }
         }
-        
+    }//GEN-LAST:event_nombreKeyPressed
 
-    }//GEN-LAST:event_nombreKeyTyped
-
-    private void celularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_celularKeyTyped
+    private void celularKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_celularKeyPressed
         // TODO add your handling code here:
-                  char c=evt.getKeyChar(); 
-              if (celular.getText().length()<11) {
-                  
-          if(Character.isDigit(c)==false) { 
-              getToolkit().beep(); 
-              evt.consume(); 
-               
-          }
-                  
-        } 
-              else {
-            evt.setKeyChar('\0');
+         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            try {
+                boton.requestFocus();
+            } catch (HeadlessException e) {
+            }
         }
-         
-    }//GEN-LAST:event_celularKeyTyped
+    }//GEN-LAST:event_celularKeyPressed
 
     /**
      * @param args the command line arguments
