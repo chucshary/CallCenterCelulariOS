@@ -42,12 +42,12 @@ public class Conexion {
     //Esto es lo que envia el celular
     public int mensajeconexion(String numero)
     {
-        return mensaje(numero+1);//Esto es lo que se regresa al celular
+        return mensaje(numero);//Esto es lo que se regresa al celular
     }
     
     public int mensajeconexioncaso(String numero)
     {
-        return mensajecaso(numero+1);//Esto es lo que se regresa al celular
+        return mensajecaso(numero);//Esto es lo que se regresa al celular
     }
     public int mensaje(String numero)
     {
