@@ -3,24 +3,52 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author CHay
  */
 public class Conexion {
     
+    protected Socket sk;
+    protected DataOutputStream envio;
+    protected DataInputStream recibo;
+    protected DataInputStream recibo2;
     
     public boolean conectar()
     {
-       boolean conexion=true; 
-      //Aqui se va a iniciar el contacto con el servidor
-       //Si si se pudo conectarse va a reproducir el menu inicial desde aqui
-       String menuinicial="";//Esto lo vas a pedir al servidor desde el metodo inicio de la clase RespuestaResulta del Package MetodosConexion
-       LeeTexto.Lee(menuinicial);
-       //Y regresaria verdadero
-       //Si no pss solo regresa falso
-        return conexion;
+       String mensaje="",mensaje2="";
+        try {
+            int puerto = 10578;
+            sk = new Socket("127.0.0.1", puerto);
+            envio = new DataOutputStream(sk.getOutputStream());
+            recibo = new DataInputStream(sk.getInputStream());
+            recibo2 = new DataInputStream(sk.getInputStream());
+            mensaje=recibo.readUTF();
+            audio(mensaje);
+//            while(mensaje.equals("end")){
+//                 switch(mensaje){
+//                     case "nombre":envio.writeUTF(variables.nombre);
+//                     mensaje=recibo.readUTF();
+//                         break;
+//                     case "telefono":envio.writeUTF(variables.contacto);
+//                     mensaje=recibo.readUTF();
+//                         break;
+//                     default:LeeTexto.Lee(mensaje);
+//                     mensaje=recibo.readUTF();
+//                         break;
+//                 }     
+//            }
+            return true;
+        } catch (IOException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE,null, ex);
+        }
+        return false;
     }
     
     //Esto es lo que envia el celular
@@ -29,12 +57,18 @@ public class Conexion {
         return mensaje(numero+1);//Esto es lo que se regresa al celular
     }
     
-    
-    
     public int mensaje(String numero)
     {
         String menu="";
         int opciones=2;
+        try{
+            envio.writeUTF(numero);
+            menu=recibo.readUTF();
+            opciones=Integer.valueOf(recibo2.readUTF());
+        }catch(IOException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE,null, ex);
+        }
+        
         //Parte de Lee
         //En este metodo se supone que se hara conexion con el servidor 
         //Se le enviara el String numero a  el metodo *respuesta* en la clase RespuestaResultado del 

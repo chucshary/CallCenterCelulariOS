@@ -271,6 +271,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="pantallaLlamadaTeclado">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/img/10572228_666797956743121_7305825_n.jpg"/>
+            </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Cursor Por defecto"/>
             </Property>

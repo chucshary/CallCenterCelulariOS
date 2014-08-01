@@ -256,6 +256,7 @@ public class PantallaCelular extends javax.swing.JFrame {
         });
         jPanel1.add(colgar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 40, 40));
 
+        pantallaLlamadaTeclado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/10572228_666797956743121_7305825_n.jpg"))); // NOI18N
         pantallaLlamadaTeclado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pantallaLlamadaTeclado.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -493,44 +494,36 @@ public class PantallaCelular extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(conexion!=true)
         jTextField1.setText(jTextField1.getText()+"1");
-        
-            
-        
     }//GEN-LAST:event_unoMouseClicked
 
     private void dosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dosMouseClicked
         // TODO add your handling code here:
         if(conexion!=true)
         jTextField1.setText(jTextField1.getText()+"2");
-        
     }//GEN-LAST:event_dosMouseClicked
 
     private void tresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tresMouseClicked
         // TODO add your handling code here:
         if(conexion!=true)
         jTextField1.setText(jTextField1.getText()+"3");
-        
     }//GEN-LAST:event_tresMouseClicked
 
     private void cuatroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cuatroMouseClicked
         // TODO add your handling code here:
         if(conexion!=true)
         jTextField1.setText(jTextField1.getText()+"4");
-        
     }//GEN-LAST:event_cuatroMouseClicked
 
     private void cincoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cincoMouseClicked
         // TODO add your handling code here:
         if(conexion!=true)
         jTextField1.setText(jTextField1.getText()+"5");
-        
     }//GEN-LAST:event_cincoMouseClicked
 
     private void seisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_seisMouseClicked
         // TODO add your handling code here:
         if(conexion!=true)
         jTextField1.setText(jTextField1.getText()+"6");
-        
     }//GEN-LAST:event_seisMouseClicked
 
     private void sieteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sieteMouseClicked
@@ -899,7 +892,7 @@ public class PantallaCelular extends javax.swing.JFrame {
 //        if (variables.numeroingr==numero)
 //        {
              if(conexion==true&&enviando==0)
-        {
+             {
             enviando=1;
             
             int opciones;
@@ -1067,7 +1060,6 @@ public class PantallaCelular extends javax.swing.JFrame {
 
        if(conexion==true&&enviando==0)
         {
-        
             enviando=1;
             int opciones;
            
@@ -1097,7 +1089,6 @@ public class PantallaCelular extends javax.swing.JFrame {
 //        {
           if(conexion==true&&enviando==0)
         {
-        
             enviando=1;
             int opciones;
            
