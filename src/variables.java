@@ -12,5 +12,6 @@ public class variables {
     
     public static String menu="", numeroingr="";
     public static String nombre="", contacto="", comentario="";
+    public static int menuinicial=0;
 
 }

@@ -105,7 +105,6 @@ public class bootLogo extends javax.swing.JFrame {
             
             try
             {
-            int aux=Integer.parseInt(celular.getText());
             variables.nombre=nombre.getText();
             variables.contacto=celular.getText();
             JOptionPane.showMessageDialog(null, "Bienvenido: " + variables.nombre);

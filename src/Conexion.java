@@ -19,18 +19,19 @@ public class Conexion {
     protected DataOutputStream envio;
     protected DataInputStream recibo;
     protected DataInputStream recibo2;
-    
+
     public boolean conectar()
     {
        String mensaje="",mensaje2="";
         try {
             int puerto = 10578;
-            sk = new Socket("127.0.0.1", puerto);
+            sk = new Socket("192.168.0.37", puerto);
             envio = new DataOutputStream(sk.getOutputStream());
             recibo = new DataInputStream(sk.getInputStream());
             recibo2 = new DataInputStream(sk.getInputStream());
             mensaje=recibo.readUTF();
             audio(mensaje);
+            variables.menuinicial= Integer.parseInt(recibo2.readUTF());
 //            while(mensaje.equals("end")){
 //                 switch(mensaje){
 //                     case "nombre":envio.writeUTF(variables.nombre);
