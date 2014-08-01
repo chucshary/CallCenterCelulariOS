@@ -91,7 +91,6 @@ public class Conexion {
     
 public void audio(String texto)
     {
-        LeeTexto.Lee(texto);
         String aux="";
         for(int i=0; i<texto.length();i++)
         {
@@ -112,11 +111,13 @@ public void audio(String texto)
     public void conectarfin(String nombrecliente, String contacto, String comentario, String resultado , String idmenu)
     {
         try{
+            envio.writeUTF(idmenu);
             envio.writeUTF(nombrecliente);
             envio.writeUTF(contacto);
-            envio.writeUTF(comentario);
             envio.writeUTF(resultado);
-            envio.writeUTF(idmenu);
+            envio.writeUTF(comentario);
+            
+            
         }catch(IOException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE,null, ex);
         }
