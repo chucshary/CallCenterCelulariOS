@@ -89,9 +89,23 @@ public class Conexion {
         return opciones;//Regresamos las opciones
     }
     
-    public void audio(String texto)
+public void audio(String texto)
     {
         LeeTexto.Lee(texto);
+        String aux="";
+        for(int i=0; i<texto.length();i++)
+        {
+            aux=aux+Character.toString(texto.charAt(i));
+            if(aux.length()==100)
+            {
+                aux=aux.trim();
+                LeeTexto.Lee(aux.trim());
+                aux="";
+            }
+        }
+        aux=aux.trim();
+        if(aux.length()!=0)
+        LeeTexto.Lee(aux);
     }
     
 //Final //Cuando el cliente nos dice si se resolvio su duda y asi~    
