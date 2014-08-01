@@ -32,24 +32,11 @@ public class Conexion {
             mensaje=recibo.readUTF();
             audio(mensaje);
             variables.menuinicial= Integer.parseInt(recibo2.readUTF());
-//            while(mensaje.equals("end")){
-//                 switch(mensaje){
-//                     case "nombre":envio.writeUTF(variables.nombre);
-//                     mensaje=recibo.readUTF();
-//                         break;
-//                     case "telefono":envio.writeUTF(variables.contacto);
-//                     mensaje=recibo.readUTF();
-//                         break;
-//                     default:LeeTexto.Lee(mensaje);
-//                     mensaje=recibo.readUTF();
-//                         break;
-//                 }     
-//            }
             return true;
         } catch (IOException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE,null, ex);
+            return false;
         }
-        return false;
     }
     
     //Esto es lo que envia el celular
@@ -73,10 +60,6 @@ public class Conexion {
         }catch(IOException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE,null, ex);
         }
-        
-        
-        
-        
         //Parte de Lee
         //En este metodo se supone que se hara conexion con el servidor 
         //Se le enviara el String numero a  el metodo *respuesta* en la clase RespuestaResultado del 
@@ -97,10 +80,6 @@ public class Conexion {
         }catch(IOException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE,null, ex);
         }
-        
-        
-        
-        
         //Parte de Lee
         //En este metodo se supone que se hara conexion con el servidor 
         //Se le enviara el String numero a  el metodo *respuesta* en la clase RespuestaResultado del 
