@@ -13,5 +13,11 @@ public class variables {
     public static String menu="", numeroingr="";
     public static String nombre="", contacto="", comentario="";
     public static int menuinicial=0;
+    public static void clear()
+    {
+     String menu="", numeroingr="";
+     String nombre="", contacto="", comentario="";
+     menuinicial=0;
+    }
 
 }

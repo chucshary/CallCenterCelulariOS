@@ -719,6 +719,7 @@ public class PantallaCelular extends javax.swing.JFrame {
     private void colgarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_colgarMouseClicked
         // TODO add your handling code here:
         LeeTexto.Lee("Adios!");
+        variables.clear();
         conexion=false;
         esinicio=esfinal=0;
         this.msj.setVisible(false);
@@ -866,14 +867,16 @@ public class PantallaCelular extends javax.swing.JFrame {
            
            if(esinicio!=0&&1<=esinicio)
            {
-               variables.menu=variables.menu+1;
+               
                opciones=c.mensajeconexioncaso(variables.menu);
                menuopciones=opciones;
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
                }
+               esinicio=0;
+               variables.menu=variables.menu+1;
                
            }
             
@@ -894,6 +897,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                variables.comentario=JOptionPane.showInputDialog("Comentarios opcionales: ");
                c.conectarfin(variables.nombre, variables.contacto, variables.comentario, "Resuelto");
                LeeTexto.Lee("Adios!");
+               variables.clear();
         conexion=false;
         this.msj.setVisible(false);
         this.home.setVisible(false);
@@ -956,14 +960,16 @@ public class PantallaCelular extends javax.swing.JFrame {
            
            if(esinicio!=0&&2<=esinicio)
            {
-               variables.menu=variables.menu+1;
+               
                opciones=c.mensajeconexion(variables.menu);
                menuopciones=opciones;
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
                }
+               esinicio=0;
+               variables.menu=variables.menu+2;
                
            }
            else if(esfinal==-1&&2<menuopciones)
@@ -976,6 +982,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                    esfinal=menuopciones=0;
                    LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
                }
+               
            }
            else if(esfinal==0)
            {
@@ -1043,7 +1050,7 @@ public class PantallaCelular extends javax.swing.JFrame {
            
            if(esinicio!=0&&3<=esinicio)
            {
-               variables.menu=variables.menu+1;
+               
                opciones=c.mensajeconexion(variables.menu);
                menuopciones=opciones;
                if(opciones==0)
@@ -1051,7 +1058,8 @@ public class PantallaCelular extends javax.swing.JFrame {
                    esfinal=menuopciones=0;
                    LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
                }
-               
+               esinicio=0;
+               variables.menu=variables.menu+3;
            }
             else    if(esfinal==-1&&3<menuopciones)
            {
@@ -1087,7 +1095,7 @@ public class PantallaCelular extends javax.swing.JFrame {
            
            if(esinicio!=0&&3<=esinicio)
            {
-               variables.menu=variables.menu+1;
+               
                opciones=c.mensajeconexion(variables.menu);
                menuopciones=opciones;
                if(opciones==0)
@@ -1095,6 +1103,8 @@ public class PantallaCelular extends javax.swing.JFrame {
                    esfinal=menuopciones=0;
                    LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
                }
+               esinicio=0;
+               variables.menu=variables.menu+4;
                
            }
             else if(esfinal==-1&&4<menuopciones)
@@ -1130,7 +1140,7 @@ public class PantallaCelular extends javax.swing.JFrame {
            
            if(esinicio!=0&&5<=esinicio)
            {
-               variables.menu=variables.menu+1;
+               
                opciones=c.mensajeconexion(variables.menu);
                menuopciones=opciones;
                if(opciones==0)
@@ -1138,6 +1148,8 @@ public class PantallaCelular extends javax.swing.JFrame {
                    esfinal=menuopciones=0;
                    LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
                }
+               esinicio=0;
+               variables.menu=variables.menu+5;
                
            }
            else if(esfinal==-1&&5<menuopciones)
@@ -1170,7 +1182,7 @@ public class PantallaCelular extends javax.swing.JFrame {
            
            if(esinicio!=0&&6<=esinicio)
            {
-               variables.menu=variables.menu+1;
+               
                opciones=c.mensajeconexion(variables.menu);
                menuopciones=opciones;
                if(opciones==0)
@@ -1178,6 +1190,9 @@ public class PantallaCelular extends javax.swing.JFrame {
                    esfinal=menuopciones=0;
                    LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
                }
+               esinicio=0;
+               variables.menu=variables.menu+6;
+               
                
            }
            else if(esfinal==-1&&6<menuopciones)
@@ -1211,7 +1226,7 @@ public class PantallaCelular extends javax.swing.JFrame {
            
            if(esinicio!=0&&7<=esinicio)
            {
-               variables.menu=variables.menu+1;
+               
                opciones=c.mensajeconexion(variables.menu);
                menuopciones=opciones;
                if(opciones==0)
@@ -1219,6 +1234,8 @@ public class PantallaCelular extends javax.swing.JFrame {
                    esfinal=menuopciones=0;
                    LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
                }
+               esinicio=0;
+               variables.menu=variables.menu+7;
                
            }
            else if(esfinal==-1&&7<menuopciones)
@@ -1251,7 +1268,7 @@ public class PantallaCelular extends javax.swing.JFrame {
            
            if(esinicio!=0&&8<=esinicio)
            {
-               variables.menu=variables.menu+1;
+               
                opciones=c.mensajeconexion(variables.menu);
                menuopciones=opciones;
                if(opciones==0)
@@ -1259,7 +1276,8 @@ public class PantallaCelular extends javax.swing.JFrame {
                    esfinal=menuopciones=0;
                    LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
                }
-               
+               esinicio=0;
+               variables.menu=variables.menu+8;
            }
            else if(esfinal==-1&&8<menuopciones)
            {
@@ -1271,6 +1289,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                    esfinal=menuopciones=0;
                    LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
                }
+               
            }
            else
            {
@@ -1293,7 +1312,7 @@ public class PantallaCelular extends javax.swing.JFrame {
          
            if(esinicio!=0&&9<=esinicio)
            {
-               variables.menu=variables.menu+1;
+               
                opciones=c.mensajeconexion(variables.menu);
                menuopciones=opciones;
                if(opciones==0)
@@ -1301,7 +1320,8 @@ public class PantallaCelular extends javax.swing.JFrame {
                    esfinal=menuopciones=0;
                    LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
                }
-               
+               esinicio=0;
+               variables.menu=variables.menu+9;
            }  
            else if(esfinal==-1&&9<menuopciones)
            {
