@@ -632,7 +632,47 @@ public class PantallaCelular extends javax.swing.JFrame {
                 conexion= c.conectar();
                 esinicio=variables.menuinicial;
                 if(conexion==false)
-                    LeeTexto.Lee("Lo sentimos El numero que usted marco no esta disponible.");
+                {LeeTexto.Lee("Lo sentimos El numero que usted marco no esta disponible.");
+                        LeeTexto.Lee("Adios!");
+        conexion=false;
+        esinicio=esfinal=0;
+        this.msj.setVisible(false);
+        this.home.setVisible(false);
+        this.pantallaLlamada.setVisible(false);
+        this.colgar.setVisible(false);
+        this.menuios.setVisible(false);
+        this.menullamada.setVisible(true);
+        this.llamada.setVisible(true);
+        this.jTextField1.setVisible(true);
+        this.jTextField1.setBackground(Color.WHITE);
+        this.jTextField1.setForeground(Color.BLACK);
+        this.asterisco.setVisible(true);
+        this.gato.setVisible(true);
+        this.cero.setVisible(true);
+        this.uno.setVisible(true);
+        this.dos.setVisible(true);
+        this.tres.setVisible(true);
+        this.cuatro.setVisible(true);
+        this.cinco.setVisible(true);
+        this.seis.setVisible(true);
+        this.siete.setVisible(true);
+        this.ocho.setVisible(true);
+        this.nueve.setVisible(true);
+        this.cero1.setVisible(false);
+        this.unos.setVisible(false);
+        this.doss.setVisible(false);
+        this.tress.setVisible(false);
+        this.cuatros.setVisible(false);
+        this.cincos.setVisible(false);
+        this.seiss.setVisible(false);
+        this.sietes.setVisible(false);
+        this.ochos.setVisible(false);
+        this.nueves.setVisible(false);
+        this.pantallaLlamadaTeclado.setVisible(false);
+        this.botonteclado.setVisible(false);
+        
+
+                }
          }
          
          
