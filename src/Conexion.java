@@ -95,8 +95,9 @@ public class Conexion {
     }
     
 //Final //Cuando el cliente nos dice si se resolvio su duda y asi~    
-    public void conectarfin(String nombre, String numero, String comentario, String resolucion )
+    public void conectarfin(String nombrecliente, String contacto, String comentario, String resultado , String idmenu)
     {
+        
         //Parte de Lee
         //Aqui se supone que enviaras estos datos a el metodo *fin
         //de la clase RespuestaResultado del package MetodosConexion
