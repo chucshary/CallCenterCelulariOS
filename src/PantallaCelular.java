@@ -895,7 +895,7 @@ public class PantallaCelular extends javax.swing.JFrame {
            else if(esfinal==0)
            {
                variables.comentario=JOptionPane.showInputDialog("Comentarios opcionales: ");
-               c.conectarfin(variables.nombre, variables.contacto, variables.comentario, "Resuelto", variables.menu);
+               c.conectarfin(variables.nombre, variables.contacto, variables.comentario, "RESUELTO", variables.menu);
                LeeTexto.Lee("Adios!");
                variables.clear();
         conexion=false;
@@ -987,7 +987,7 @@ public class PantallaCelular extends javax.swing.JFrame {
            else if(esfinal==0)
            {
                variables.comentario=JOptionPane.showInputDialog("Comentarios opcionales: ");
-               c.conectarfin(variables.nombre, variables.contacto, variables.comentario, "No resuleto", variables.menu);
+               c.conectarfin(variables.nombre, variables.contacto, variables.comentario, "NO RESUELTO", variables.menu);
                LeeTexto.Lee("Adios!");
         conexion=false;
         this.msj.setVisible(false);
