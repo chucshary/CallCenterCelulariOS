@@ -881,7 +881,7 @@ public class PantallaCelular extends javax.swing.JFrame {
            }
             
             
-           else if(esfinal==-1&&1<menuopciones)
+           else if(esfinal==-1&&1<=menuopciones)
            {
                variables.menu=variables.menu+1;
                opciones=c.mensajeconexion(variables.menu);
@@ -972,7 +972,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                variables.menu=variables.menu+2;
                
            }
-           else if(esfinal==-1&&2<menuopciones)
+           else if(esfinal==-1&&2<=menuopciones)
            {
                variables.menu=variables.menu+2;
                opciones=c.mensajeconexion(variables.menu);
@@ -1061,7 +1061,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                esinicio=0;
                variables.menu=variables.menu+3;
            }
-            else    if(esfinal==-1&&3<menuopciones)
+            else    if(esfinal==-1&&3<=menuopciones)
            {
                variables.menu=variables.menu+3;
                opciones=c.mensajeconexion(variables.menu);
@@ -1107,7 +1107,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                variables.menu=variables.menu+4;
                
            }
-            else if(esfinal==-1&&4<menuopciones)
+            else if(esfinal==-1&&4<=menuopciones)
            {
                variables.menu=variables.menu+4;
                opciones=c.mensajeconexion(variables.menu);
@@ -1152,7 +1152,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                variables.menu=variables.menu+5;
                
            }
-           else if(esfinal==-1&&5<menuopciones)
+           else if(esfinal==-1&&5<=menuopciones)
            {
                variables.menu=variables.menu+5;
                opciones=c.mensajeconexion(variables.menu);
@@ -1195,7 +1195,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                
                
            }
-           else if(esfinal==-1&&6<menuopciones)
+           else if(esfinal==-1&&6<=menuopciones)
            {
                variables.menu=variables.menu+6;
                opciones=c.mensajeconexion(variables.menu);
@@ -1238,7 +1238,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                variables.menu=variables.menu+7;
                
            }
-           else if(esfinal==-1&&7<menuopciones)
+           else if(esfinal==-1&&7<=menuopciones)
            {
                variables.menu=variables.menu+7;
                opciones=c.mensajeconexion(variables.menu);
@@ -1279,7 +1279,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                esinicio=0;
                variables.menu=variables.menu+8;
            }
-           else if(esfinal==-1&&8<menuopciones)
+           else if(esfinal==-1&&8<=menuopciones)
            {
                variables.menu=variables.menu+8;
                opciones=c.mensajeconexion(variables.menu);
@@ -1323,7 +1323,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                esinicio=0;
                variables.menu=variables.menu+9;
            }  
-           else if(esfinal==-1&&9<menuopciones)
+           else if(esfinal==-1&&9<=menuopciones)
            {
                variables.menu=variables.menu+9;
                opciones=c.mensajeconexion(variables.menu);
