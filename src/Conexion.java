@@ -58,10 +58,14 @@ public class Conexion {
         return mensaje(numero+1);//Esto es lo que se regresa al celular
     }
     
+    public int mensajeconexioncaso(String numero)
+    {
+        return mensajecaso(numero+1);//Esto es lo que se regresa al celular
+    }
     public int mensaje(String numero)
     {
         String menu="";
-        int opciones=2;
+        int opciones=0;
         try{
             envio.writeUTF(numero);
             menu=recibo.readUTF();
@@ -69,6 +73,33 @@ public class Conexion {
         }catch(IOException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE,null, ex);
         }
+        
+        
+        
+        
+        //Parte de Lee
+        //En este metodo se supone que se hara conexion con el servidor 
+        //Se le enviara el String numero a  el metodo *respuesta* en la clase RespuestaResultado del 
+        //servidor en el Package MetodoConexion y nos devolvera las respuestas
+        //en las variables menu y opciones
+        audio(menu);//Enviamos el audio a reproducir
+        return opciones;//Regresamos las opciones
+    }
+    
+    public int mensajecaso(String numero)
+    {
+        String menu="";
+        int opciones=0;
+        try{
+            envio.writeUTF(numero);
+            menu=recibo.readUTF();
+            opciones=Integer.valueOf(recibo2.readUTF());
+        }catch(IOException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE,null, ex);
+        }
+        
+        
+        
         
         //Parte de Lee
         //En este metodo se supone que se hara conexion con el servidor 

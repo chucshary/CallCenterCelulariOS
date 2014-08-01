@@ -867,7 +867,7 @@ public class PantallaCelular extends javax.swing.JFrame {
            if(esinicio!=0&&1<=esinicio)
            {
                variables.menu=variables.menu+1;
-               opciones=c.mensajeconexion(variables.menu);
+               opciones=c.mensajeconexioncaso(variables.menu);
                menuopciones=opciones;
                if(opciones==0)
                {
