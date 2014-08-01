@@ -889,7 +889,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
                }
            }
            else if(esfinal==0)
@@ -980,7 +980,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");                              
                }
                
            }
@@ -1056,7 +1056,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
                }
                esinicio=0;
                variables.menu=variables.menu+3;
@@ -1069,7 +1069,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
                }
            }
            else
@@ -1101,7 +1101,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
                }
                esinicio=0;
                variables.menu=variables.menu+4;
@@ -1115,7 +1115,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
                }
            }
            else
@@ -1146,7 +1146,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
                }
                esinicio=0;
                variables.menu=variables.menu+5;
@@ -1160,7 +1160,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
                }
            }
            else
@@ -1188,7 +1188,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");                           
                }
                esinicio=0;
                variables.menu=variables.menu+6;
@@ -1203,7 +1203,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
                }
            }
            else
@@ -1232,7 +1232,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");                            
                }
                esinicio=0;
                variables.menu=variables.menu+7;
@@ -1246,7 +1246,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
                }
            }
            else
@@ -1274,7 +1274,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");                             
                }
                esinicio=0;
                variables.menu=variables.menu+8;
@@ -1287,7 +1287,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
                }
                
            }
@@ -1318,7 +1318,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");                            
                }
                esinicio=0;
                variables.menu=variables.menu+9;
@@ -1331,7 +1331,7 @@ public class PantallaCelular extends javax.swing.JFrame {
                if(opciones==0)
                {
                    esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No maruqe 2");               
+                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
                }
            }
            else
