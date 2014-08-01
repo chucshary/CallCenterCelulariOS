@@ -97,7 +97,15 @@ public class Conexion {
 //Final //Cuando el cliente nos dice si se resolvio su duda y asi~    
     public void conectarfin(String nombrecliente, String contacto, String comentario, String resultado , String idmenu)
     {
-        
+        try{
+            envio.writeUTF(nombrecliente);
+            envio.writeUTF(contacto);
+            envio.writeUTF(comentario);
+            envio.writeUTF(resultado);
+            envio.writeUTF(idmenu);
+        }catch(IOException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE,null, ex);
+        }
         //Parte de Lee
         //Aqui se supone que enviaras estos datos a el metodo *fin
         //de la clase RespuestaResultado del package MetodosConexion
@@ -105,5 +113,4 @@ public class Conexion {
         
        
     }
-    
 }
