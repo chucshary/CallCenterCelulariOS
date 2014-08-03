@@ -1,9 +1,6 @@
 
 import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /*
@@ -11,7 +8,6 @@ import javax.swing.JOptionPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author CHay
@@ -106,40 +102,33 @@ public class bootLogo extends javax.swing.JFrame {
 
     private void botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActionPerformed
         // TODO add your handling code here:
-        if (nombre.getText().length()!=0 &&nombre.getText().length()<31 && celular.getText().length()==10||nombre.getText().length()!=0 &&nombre.getText().length()<31 && celular.getText().length()==8)
-        {
-            
-            try
-            {
-            variables.nombre=nombre.getText();
-            variables.contacto=celular.getText();
-            JOptionPane.showMessageDialog(null, "Bienvenido: " + variables.nombre);
-            PantallaCelular fm = new PantallaCelular();
-            fm.show();
-            this.hide();
+        try {
+            if (nombre.getText().length() != 0 && nombre.getText().length() < 31 && celular.getText().length() == 10 || nombre.getText().length() != 0 && nombre.getText().length() < 31 && celular.getText().length() == 8) {
+                try {
+                    variables.nombre = nombre.getText();
+                    variables.contacto = celular.getText();
+                    JOptionPane.showMessageDialog(null, "Bienvenido: " + variables.nombre);
+                    PantallaCelular fm = new PantallaCelular();
+                    fm.show();
+                    this.hide();
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Error de Usuario o Numero Incorrecto\nRecuerde que debe colocar un nombre valido y numero de 10 u 8 caracteres");
+                    celular.setText("");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Error de Usuario o Numero Incorrecto\nRecuerde que debe colocar un nombre valido y numero de 10 u 8 caracteres");
+                nombre.setText("");
+                celular.setText("");
             }
-            catch (Exception e)
-            {
-            JOptionPane.showMessageDialog(null, "Error de Usuario o Numero Incorrecto\nRecuerde que debe colocar un nombre valido y numero de 10 u 8 caracteres");
-            celular.setText("");
-                
-            }
-                    
-            
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Error de Usuario o Numero Incorrecto\nRecuerde que debe colocar un nombre valido y numero de 10 u 8 caracteres");
-            nombre.setText("");
-            celular.setText("");
+        } catch (Exception e) {
         }
     }//GEN-LAST:event_botonActionPerformed
 
     private void nombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreKeyPressed
         // TODO add your handling code here:
-         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             try {
-               celular.requestFocus();
+                celular.requestFocus();
             } catch (HeadlessException e) {
             }
         }
@@ -147,7 +136,7 @@ public class bootLogo extends javax.swing.JFrame {
 
     private void celularKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_celularKeyPressed
         // TODO add your handling code here:
-         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             try {
                 boton.requestFocus();
             } catch (HeadlessException e) {

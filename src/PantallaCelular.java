@@ -1,6 +1,4 @@
 
-
-
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Shape;
@@ -10,90 +8,100 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import com.sun.awt.AWTUtilities;
 
-
-
 /**
  *
  * @author ChayOMG
  */
 public class PantallaCelular extends javax.swing.JFrame {
 
-    
+    public boolean conexion = false;
+    public String numero = "9981542191";
+    public String numero2 = "9981347477";
+    public int esfinal = -1, menuopciones = 9;
+    public int enviando = 0;
+    public int esinicio = 0;
+    public Conexion c = new Conexion();
+
     public PantallaCelular() {
         initComponents();
         setLocationRelativeTo(null);
-        
-        Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30); 
-        AWTUtilities.setWindowShape(this, forma); 
-        
-        this.msj.setVisible(false);
-        this.pantallaLlamadaTeclado.setVisible(false);
-        this.botonteclado.setVisible(false);
-        this.pantallaLlamada.setVisible(false);
-        this.home.setVisible(false);
-        this.menuios.setVisible(false);
-        this.menullamada.setVisible(false);
-        this.llamada.setVisible(false);
-        this.jTextField1.setVisible(false);
-        this.asterisco.setVisible(false);
-        this.gato.setVisible(false);
-        this.cero.setVisible(false);
-        this.uno.setVisible(false);
-        this.dos.setVisible(false);
-        this.tres.setVisible(false);
-        this.cuatro.setVisible(false);
-        this.cinco.setVisible(false);
-        this.seis.setVisible(false);
-        this.siete.setVisible(false);
-        this.ocho.setVisible(false);
-        this.nueve.setVisible(false);
-        
-        ImageIcon imgIcon3 = new ImageIcon(getClass().getResource("/img/llamadaios.jpg"));
-        Image imgEscalada3 = imgIcon3.getImage().getScaledInstance(llamada.getWidth(),
-        llamada.getHeight(), Image.SCALE_SMOOTH);
-        Icon iconoEscalado3 = new ImageIcon(imgEscalada3);
-        llamada.setIcon(iconoEscalado3);
-        
-        ImageIcon imgIcon = new ImageIcon(getClass().getResource("/img/menuios.jpg"));
-        Image imgEscalada = imgIcon.getImage().getScaledInstance(menuios.getWidth(),
-        menuios.getHeight(), Image.SCALE_SMOOTH);
-        Icon iconoEscalado = new ImageIcon(imgEscalada);
-        menuios.setIcon(iconoEscalado);
-        
-        ImageIcon imgIcon4 = new ImageIcon(getClass().getResource("/img/llamando.jpg"));
-        Image imgEscalada4 = imgIcon4.getImage().getScaledInstance(pantallaLlamada.getWidth(),
-        pantallaLlamada.getHeight(), Image.SCALE_SMOOTH);
-        Icon iconoEscalado4 = new ImageIcon(imgEscalada4);
-        pantallaLlamada.setIcon(iconoEscalado4);
-        
-        ImageIcon imgIcon2 = new ImageIcon(getClass().getResource("/img/lock.jpg"));
-        Image imgEscalada2 = imgIcon2.getImage().getScaledInstance(equipo.getWidth(),
-        lockscreen.getHeight(), Image.SCALE_SMOOTH);
-        Icon iconoEscalado2 = new ImageIcon(imgEscalada2);
-        lockscreen.setIcon(iconoEscalado2);
-        
-        ImageIcon imgIcon5 = new ImageIcon(getClass().getResource("/img/tecladonume.jpg"));
-        Image imgEscalada5 = imgIcon5.getImage().getScaledInstance(pantallaLlamadaTeclado.getWidth(),
-        pantallaLlamadaTeclado.getHeight(), Image.SCALE_SMOOTH);
-        Icon iconoEscalado5 = new ImageIcon(imgEscalada5);
-        pantallaLlamadaTeclado.setIcon(iconoEscalado5);
-
+        forma();
+        inicioImages();
     }
-    
-    boolean conexion = false;
-    String numero = "9981542191";
-    String numero2= "9981347477";
-    int esfinal=-1, menuopciones=9;
-   int enviando=0; 
-   int esinicio=0;
-   Conexion c= new Conexion();
+
+    public void forma() {
+        try {
+            Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
+            AWTUtilities.setWindowShape(this, forma);
+
+            this.msj.setVisible(false);
+            this.pantallaLlamadaTeclado.setVisible(false);
+            this.botonteclado.setVisible(false);
+            this.pantallaLlamada.setVisible(false);
+            this.home.setVisible(false);
+            this.menuios.setVisible(false);
+            this.menullamada.setVisible(false);
+            this.llamada.setVisible(false);
+            this.jTextField1.setVisible(false);
+            this.asterisco.setVisible(false);
+            this.gato.setVisible(false);
+            this.cero.setVisible(false);
+            this.uno.setVisible(false);
+            this.dos.setVisible(false);
+            this.tres.setVisible(false);
+            this.cuatro.setVisible(false);
+            this.cinco.setVisible(false);
+            this.seis.setVisible(false);
+            this.siete.setVisible(false);
+            this.ocho.setVisible(false);
+            this.nueve.setVisible(false);
+        } catch (Exception e) {
+        }
+    }
+
+    public void inicioImages() {
+        try {
+            ImageIcon imgIcon3 = new ImageIcon(getClass().getResource("/img/llamadaios.jpg"));
+            Image imgEscalada3 = imgIcon3.getImage().getScaledInstance(llamada.getWidth(),
+                    llamada.getHeight(), Image.SCALE_SMOOTH);
+            Icon iconoEscalado3 = new ImageIcon(imgEscalada3);
+            llamada.setIcon(iconoEscalado3);
+
+            ImageIcon imgIcon = new ImageIcon(getClass().getResource("/img/menuios.jpg"));
+            Image imgEscalada = imgIcon.getImage().getScaledInstance(menuios.getWidth(),
+                    menuios.getHeight(), Image.SCALE_SMOOTH);
+            Icon iconoEscalado = new ImageIcon(imgEscalada);
+            menuios.setIcon(iconoEscalado);
+
+            ImageIcon imgIcon4 = new ImageIcon(getClass().getResource("/img/llamando.jpg"));
+            Image imgEscalada4 = imgIcon4.getImage().getScaledInstance(pantallaLlamada.getWidth(),
+                    pantallaLlamada.getHeight(), Image.SCALE_SMOOTH);
+            Icon iconoEscalado4 = new ImageIcon(imgEscalada4);
+            pantallaLlamada.setIcon(iconoEscalado4);
+
+            ImageIcon imgIcon2 = new ImageIcon(getClass().getResource("/img/lock.jpg"));
+            Image imgEscalada2 = imgIcon2.getImage().getScaledInstance(equipo.getWidth(),
+                    lockscreen.getHeight(), Image.SCALE_SMOOTH);
+            Icon iconoEscalado2 = new ImageIcon(imgEscalada2);
+            lockscreen.setIcon(iconoEscalado2);
+
+            ImageIcon imgIcon5 = new ImageIcon(getClass().getResource("/img/tecladonume.jpg"));
+            Image imgEscalada5 = imgIcon5.getImage().getScaledInstance(pantallaLlamadaTeclado.getWidth(),
+                    pantallaLlamadaTeclado.getHeight(), Image.SCALE_SMOOTH);
+            Icon iconoEscalado5 = new ImageIcon(imgEscalada5);
+            pantallaLlamadaTeclado.setIcon(iconoEscalado5);
+
+        } catch (Exception e) {
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
      * regenerated by the Form Editor.
      */
     @SuppressWarnings("unchecked")
-    
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -422,195 +430,330 @@ public class PantallaCelular extends javax.swing.JFrame {
 
     private void menullamadaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menullamadaMouseClicked
         // TODO add your handling code here:
-        this.menullamada.setVisible(false);
-        this.llamada.setVisible(true);
-        this.jTextField1.setVisible(true);
-        this.msj.setVisible(false);
-        this.asterisco.setVisible(true);
-        this.gato.setVisible(true);
-        this.cero.setVisible(true);
-        this.uno.setVisible(true);
-        this.dos.setVisible(true);
-        this.tres.setVisible(true);
-        this.cuatro.setVisible(true);
-        this.cinco.setVisible(true);
-        this.seis.setVisible(true);
-        this.siete.setVisible(true);
-        this.ocho.setVisible(true);
-        this.nueve.setVisible(true);
-        this.cero1.setVisible(false);
-        this.unos.setVisible(false);
-        this.doss.setVisible(false);
-        this.tress.setVisible(false);
-        this.cuatros.setVisible(false);
-        this.cincos.setVisible(false);
-        this.seiss.setVisible(false);
-        this.sietes.setVisible(false);
-        this.ochos.setVisible(false);
-        this.nueves.setVisible(false);
-        this.menullamada.setVisible(false);
-        this.pantallaLlamadaTeclado.setVisible(false);
-        this.botonteclado.setVisible(false);
-        this.colgar.setVisible(false);
+        try {
+            this.menullamada.setVisible(false);
+            this.llamada.setVisible(true);
+            this.jTextField1.setVisible(true);
+            this.msj.setVisible(false);
+            this.asterisco.setVisible(true);
+            this.gato.setVisible(true);
+            this.cero.setVisible(true);
+            this.uno.setVisible(true);
+            this.dos.setVisible(true);
+            this.tres.setVisible(true);
+            this.cuatro.setVisible(true);
+            this.cinco.setVisible(true);
+            this.seis.setVisible(true);
+            this.siete.setVisible(true);
+            this.ocho.setVisible(true);
+            this.nueve.setVisible(true);
+            this.cero1.setVisible(false);
+            this.unos.setVisible(false);
+            this.doss.setVisible(false);
+            this.tress.setVisible(false);
+            this.cuatros.setVisible(false);
+            this.cincos.setVisible(false);
+            this.seiss.setVisible(false);
+            this.sietes.setVisible(false);
+            this.ochos.setVisible(false);
+            this.nueves.setVisible(false);
+            this.menullamada.setVisible(false);
+            this.pantallaLlamadaTeclado.setVisible(false);
+            this.botonteclado.setVisible(false);
+            this.colgar.setVisible(false);
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_menullamadaMouseClicked
 
     private void homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseClicked
         // TODO add your handling code here:
-        jTextField1.setText("");
-        
-        this.menuios.setVisible(true);
-        this.llamada.setVisible(false);
-        this.menullamada.setVisible(true);
-        this.msj.setVisible(true);
-        this.colgar.setVisible(false);
-        this.pantallaLlamada.setVisible(false);
-        this.llamada.setVisible(false);
-        this.jTextField1.setVisible(false);
-        this.asterisco.setVisible(false);
-        this.gato.setVisible(false);
-        this.cero.setVisible(false);
-        this.uno.setVisible(false);
-        this.dos.setVisible(false);
-        this.tres.setVisible(false);
-        this.cuatro.setVisible(false);
-        this.cinco.setVisible(false);
-        this.seis.setVisible(false);
-        this.siete.setVisible(false);
-        this.ocho.setVisible(false);
-        this.nueve.setVisible(false);
-        this.cero1.setVisible(false);
-        this.unos.setVisible(false);
-        this.doss.setVisible(false);
-        this.tress.setVisible(false);
-        this.cuatros.setVisible(false);
-        this.cincos.setVisible(false);
-        this.seiss.setVisible(false);
-        this.sietes.setVisible(false);
-        this.ochos.setVisible(false);
-        this.nueves.setVisible(false);
-        this.pantallaLlamadaTeclado.setVisible(false);
-        this.botonteclado.setVisible(false);
+        try {
+            jTextField1.setText("");
+
+            this.menuios.setVisible(true);
+            this.llamada.setVisible(false);
+            this.menullamada.setVisible(true);
+            this.msj.setVisible(true);
+            this.colgar.setVisible(false);
+            this.pantallaLlamada.setVisible(false);
+            this.llamada.setVisible(false);
+            this.jTextField1.setVisible(false);
+            this.asterisco.setVisible(false);
+            this.gato.setVisible(false);
+            this.cero.setVisible(false);
+            this.uno.setVisible(false);
+            this.dos.setVisible(false);
+            this.tres.setVisible(false);
+            this.cuatro.setVisible(false);
+            this.cinco.setVisible(false);
+            this.seis.setVisible(false);
+            this.siete.setVisible(false);
+            this.ocho.setVisible(false);
+            this.nueve.setVisible(false);
+            this.cero1.setVisible(false);
+            this.unos.setVisible(false);
+            this.doss.setVisible(false);
+            this.tress.setVisible(false);
+            this.cuatros.setVisible(false);
+            this.cincos.setVisible(false);
+            this.seiss.setVisible(false);
+            this.sietes.setVisible(false);
+            this.ochos.setVisible(false);
+            this.nueves.setVisible(false);
+            this.pantallaLlamadaTeclado.setVisible(false);
+            this.botonteclado.setVisible(false);
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_homeMouseClicked
 
     private void unoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_unoMouseClicked
         // TODO add your handling code here:
-        if(conexion!=true)
-        jTextField1.setText(jTextField1.getText()+"1");
+        try {
+            if (conexion != true) {
+                jTextField1.setText(jTextField1.getText() + "1");
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_unoMouseClicked
 
     private void dosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dosMouseClicked
         // TODO add your handling code here:
-        if(conexion!=true)
-        jTextField1.setText(jTextField1.getText()+"2");
+        try {
+            if (conexion != true) {
+                jTextField1.setText(jTextField1.getText() + "2");
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_dosMouseClicked
 
     private void tresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tresMouseClicked
         // TODO add your handling code here:
-        if(conexion!=true)
-        jTextField1.setText(jTextField1.getText()+"3");
+        try {
+            if (conexion != true) {
+                jTextField1.setText(jTextField1.getText() + "3");
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_tresMouseClicked
 
     private void cuatroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cuatroMouseClicked
         // TODO add your handling code here:
-        if(conexion!=true)
-        jTextField1.setText(jTextField1.getText()+"4");
+        try {
+            if (conexion != true) {
+                jTextField1.setText(jTextField1.getText() + "4");
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_cuatroMouseClicked
 
     private void cincoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cincoMouseClicked
         // TODO add your handling code here:
-        if(conexion!=true)
-        jTextField1.setText(jTextField1.getText()+"5");
+        try {
+            if (conexion != true) {
+                jTextField1.setText(jTextField1.getText() + "5");
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_cincoMouseClicked
 
     private void seisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_seisMouseClicked
         // TODO add your handling code here:
-        if(conexion!=true)
-        jTextField1.setText(jTextField1.getText()+"6");
+        try {
+            if (conexion != true) {
+                jTextField1.setText(jTextField1.getText() + "6");
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_seisMouseClicked
 
     private void sieteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sieteMouseClicked
         // TODO add your handling code here:
-        if(conexion!=true)
-        jTextField1.setText(jTextField1.getText()+"7");
+        try {
+            if (conexion != true) {
+                jTextField1.setText(jTextField1.getText() + "7");
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_sieteMouseClicked
 
     private void ochoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ochoMouseClicked
         // TODO add your handling code here:
-        if(conexion!=true)
-        jTextField1.setText(jTextField1.getText()+"8");
-        
+        try {
+            if (conexion != true) {
+                jTextField1.setText(jTextField1.getText() + "8");
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_ochoMouseClicked
 
     private void nueveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nueveMouseClicked
         // TODO add your handling code here:
-        if(conexion!=true)
-        jTextField1.setText(jTextField1.getText()+"9");
-       
+        try {
+            if (conexion != true) {
+                jTextField1.setText(jTextField1.getText() + "9");
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_nueveMouseClicked
 
     private void asteriscoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asteriscoMouseClicked
         // TODO add your handling code here:
-        if(conexion==true)
-            LeeTexto.Lee("Opcion no valida");
-        
+        try {
+            if (conexion == true) {
+                LeeTexto.Lee("Opcion no valida");
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_asteriscoMouseClicked
 
     private void ceroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ceroMouseClicked
         // TODO add your handling code here:
-        if(conexion!=true)
-        jTextField1.setText(jTextField1.getText()+"0");
-        else
-            LeeTexto.Lee("Opcion no valida");
-
+        try {
+            if (conexion != true) {
+                jTextField1.setText(jTextField1.getText() + "0");
+            } else {
+                LeeTexto.Lee("Opcion no valida");
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_ceroMouseClicked
 
     private void gatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gatoMouseClicked
         // TODO add your handling code here:
-        if(conexion!=true)
-        jTextField1.setText(jTextField1.getText()+"#");
-        else
-            LeeTexto.Lee("Opcion no valida");
+        try {
+            if (conexion != true) {
+                jTextField1.setText(jTextField1.getText() + "#");
+            } else {
+                LeeTexto.Lee("Opcion no valida");
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_gatoMouseClicked
 
     private void unlockMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_unlockMouseEntered
         // TODO add your handling code here:
-        this.unlock.setVisible(false);
-        this.lockscreen.setVisible(false);
-        this.menuios.setVisible(true);
-        this.menullamada.setVisible(true);
-        this.home.setVisible(true);
-        this.jTextField1.setVisible(false);
-        this.pantallaLlamadaTeclado.setVisible(false);
-        this.botonteclado.setVisible(false);
-        this.msj.setVisible(false);
+        try {
+            this.unlock.setVisible(false);
+            this.lockscreen.setVisible(false);
+            this.menuios.setVisible(true);
+            this.menullamada.setVisible(true);
+            this.home.setVisible(true);
+            this.jTextField1.setVisible(false);
+            this.pantallaLlamadaTeclado.setVisible(false);
+            this.botonteclado.setVisible(false);
+            this.msj.setVisible(false);
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_unlockMouseEntered
 
     private void llamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_llamarMouseClicked
         // TODO add your handling code here:
         //Ahora se supone que cuando" llame al servidor" invocare a la clase conectar
         //Primero creamos el objeto de dicha clase (osease el que nos da acceso a esa clase). Le llamaremos "c"
-        
-        this.home.setVisible(false);
-        this.msj.setVisible(false);
-                this.colgar.setVisible(true);
-                this.pantallaLlamada.setVisible(true);
+        try {
+            this.home.setVisible(false);
+            this.msj.setVisible(false);
+            this.colgar.setVisible(true);
+            this.pantallaLlamada.setVisible(true);
+            this.menuios.setVisible(false);
+            this.menullamada.setVisible(false);
+            this.llamada.setVisible(false);
+            this.jTextField1.setBackground(Color.BLACK);
+            this.jTextField1.setForeground(Color.WHITE);
+            this.asterisco.setVisible(false);
+            this.gato.setVisible(false);
+            this.cero.setVisible(false);
+            this.uno.setVisible(false);
+            this.dos.setVisible(false);
+            this.tres.setVisible(false);
+            this.cuatro.setVisible(false);
+            this.cinco.setVisible(false);
+            this.seis.setVisible(false);
+            this.siete.setVisible(false);
+            this.ocho.setVisible(false);
+            this.nueve.setVisible(false);
+            this.cero1.setVisible(false);
+            this.unos.setVisible(false);
+            this.doss.setVisible(false);
+            this.tress.setVisible(false);
+            this.cuatros.setVisible(false);
+            this.cincos.setVisible(false);
+            this.seiss.setVisible(false);
+            this.sietes.setVisible(false);
+            this.ochos.setVisible(false);
+            this.nueves.setVisible(false);
+            this.pantallaLlamadaTeclado.setVisible(false);
+            this.botonteclado.setVisible(true);
+
+            if (jTextField1.getText().equals(numero) || jTextField1.getText().equals(numero2)) {
+                LeeTexto.Lee("Llamando.");
+                variables.numeroingr = jTextField1.getText();
+                conexion = c.conectar();
+                esinicio = variables.menuinicial;
+                if (conexion == false) {
+                    LeeTexto.Lee("Lo sentimos El numero que usted marco no esta disponible.");
+                    LeeTexto.Lee("Adios!");
+                    conexion = false;
+                    esinicio = esfinal = 0;
+                    this.msj.setVisible(false);
+                    this.home.setVisible(false);
+                    this.pantallaLlamada.setVisible(false);
+                    this.colgar.setVisible(false);
+                    this.menuios.setVisible(false);
+                    this.menullamada.setVisible(true);
+                    this.llamada.setVisible(true);
+                    this.jTextField1.setVisible(true);
+                    this.jTextField1.setBackground(Color.WHITE);
+                    this.jTextField1.setForeground(Color.BLACK);
+                    this.asterisco.setVisible(true);
+                    this.gato.setVisible(true);
+                    this.cero.setVisible(true);
+                    this.uno.setVisible(true);
+                    this.dos.setVisible(true);
+                    this.tres.setVisible(true);
+                    this.cuatro.setVisible(true);
+                    this.cinco.setVisible(true);
+                    this.seis.setVisible(true);
+                    this.siete.setVisible(true);
+                    this.ocho.setVisible(true);
+                    this.nueve.setVisible(true);
+                    this.cero1.setVisible(false);
+                    this.unos.setVisible(false);
+                    this.doss.setVisible(false);
+                    this.tress.setVisible(false);
+                    this.cuatros.setVisible(false);
+                    this.cincos.setVisible(false);
+                    this.seiss.setVisible(false);
+                    this.sietes.setVisible(false);
+                    this.ochos.setVisible(false);
+                    this.nueves.setVisible(false);
+                    this.pantallaLlamadaTeclado.setVisible(false);
+                    this.botonteclado.setVisible(false);
+
+                }
+            } else {
+                LeeTexto.Lee("Error de llamada !, Numero Incorrecto");
+                this.home.setVisible(true);
+                this.pantallaLlamada.setVisible(false);
+                this.colgar.setVisible(false);
                 this.menuios.setVisible(false);
-                this.menullamada.setVisible(false);
-                this.llamada.setVisible(false);
-                this.jTextField1.setBackground(Color.BLACK);
-                this.jTextField1.setForeground(Color.WHITE);
-                this.asterisco.setVisible(false);
-                this.gato.setVisible(false);
-                this.cero.setVisible(false);
-                this.uno.setVisible(false);
-                this.dos.setVisible(false);
-                this.tres.setVisible(false);
-                this.cuatro.setVisible(false);
-                this.cinco.setVisible(false);
-                this.seis.setVisible(false);
-                this.siete.setVisible(false);
-                this.ocho.setVisible(false);
-                this.nueve.setVisible(false);
+                this.menullamada.setVisible(true);
+                this.llamada.setVisible(true);
+                this.jTextField1.setVisible(true);
+                this.jTextField1.setBackground(Color.WHITE);
+                this.jTextField1.setForeground(Color.BLACK);
+                this.asterisco.setVisible(true);
+                this.gato.setVisible(true);
+                this.cero.setVisible(true);
+                this.uno.setVisible(true);
+                this.dos.setVisible(true);
+                this.tres.setVisible(true);
+                this.cuatro.setVisible(true);
+                this.cinco.setVisible(true);
+                this.seis.setVisible(true);
+                this.siete.setVisible(true);
+                this.ocho.setVisible(true);
+                this.nueve.setVisible(true);
                 this.cero1.setVisible(false);
                 this.unos.setVisible(false);
                 this.doss.setVisible(false);
@@ -622,66 +765,22 @@ public class PantallaCelular extends javax.swing.JFrame {
                 this.ochos.setVisible(false);
                 this.nueves.setVisible(false);
                 this.pantallaLlamadaTeclado.setVisible(false);
-                this.botonteclado.setVisible(true);
-        
-        
-        
-         if(jTextField1.getText().equals(numero) || jTextField1.getText().equals(numero2))
-         {
-                LeeTexto.Lee("Llamando.");
-                variables.numeroingr=jTextField1.getText();
-                conexion= c.conectar();
-                esinicio=variables.menuinicial;
-                if(conexion==false)
-                {LeeTexto.Lee("Lo sentimos El numero que usted marco no esta disponible.");
-                        LeeTexto.Lee("Adios!");
-        conexion=false;
-        esinicio=esfinal=0;
-        this.msj.setVisible(false);
-        this.home.setVisible(false);
-        this.pantallaLlamada.setVisible(false);
-        this.colgar.setVisible(false);
-        this.menuios.setVisible(false);
-        this.menullamada.setVisible(true);
-        this.llamada.setVisible(true);
-        this.jTextField1.setVisible(true);
-        this.jTextField1.setBackground(Color.WHITE);
-        this.jTextField1.setForeground(Color.BLACK);
-        this.asterisco.setVisible(true);
-        this.gato.setVisible(true);
-        this.cero.setVisible(true);
-        this.uno.setVisible(true);
-        this.dos.setVisible(true);
-        this.tres.setVisible(true);
-        this.cuatro.setVisible(true);
-        this.cinco.setVisible(true);
-        this.seis.setVisible(true);
-        this.siete.setVisible(true);
-        this.ocho.setVisible(true);
-        this.nueve.setVisible(true);
-        this.cero1.setVisible(false);
-        this.unos.setVisible(false);
-        this.doss.setVisible(false);
-        this.tress.setVisible(false);
-        this.cuatros.setVisible(false);
-        this.cincos.setVisible(false);
-        this.seiss.setVisible(false);
-        this.sietes.setVisible(false);
-        this.ochos.setVisible(false);
-        this.nueves.setVisible(false);
-        this.pantallaLlamadaTeclado.setVisible(false);
-        this.botonteclado.setVisible(false);
-        
+                this.botonteclado.setVisible(false);
+            }
 
-                }
-         }
-         
-         
-         
-         else 
-         {
-             LeeTexto.Lee("Error de llamada !, Numero Incorrecto");
-            this.home.setVisible(true);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_llamarMouseClicked
+
+    private void colgarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_colgarMouseClicked
+        // TODO add your handling code here:
+        try {
+            LeeTexto.Lee("Adios!");
+            variables.clear();
+            conexion = false;
+            esinicio = esfinal = 0;
+            this.msj.setVisible(false);
+            this.home.setVisible(false);
             this.pantallaLlamada.setVisible(false);
             this.colgar.setVisible(false);
             this.menuios.setVisible(false);
@@ -713,647 +812,535 @@ public class PantallaCelular extends javax.swing.JFrame {
             this.ochos.setVisible(false);
             this.nueves.setVisible(false);
             this.pantallaLlamadaTeclado.setVisible(false);
-        this.botonteclado.setVisible(false);
-         }
-    }//GEN-LAST:event_llamarMouseClicked
+            this.botonteclado.setVisible(false);
 
-    private void colgarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_colgarMouseClicked
-        // TODO add your handling code here:
-        LeeTexto.Lee("Adios!");
-        variables.clear();
-        conexion=false;
-        esinicio=esfinal=0;
-        this.msj.setVisible(false);
-        this.home.setVisible(false);
-        this.pantallaLlamada.setVisible(false);
-        this.colgar.setVisible(false);
-        this.menuios.setVisible(false);
-        this.menullamada.setVisible(true);
-        this.llamada.setVisible(true);
-        this.jTextField1.setVisible(true);
-        this.jTextField1.setBackground(Color.WHITE);
-        this.jTextField1.setForeground(Color.BLACK);
-        this.asterisco.setVisible(true);
-        this.gato.setVisible(true);
-        this.cero.setVisible(true);
-        this.uno.setVisible(true);
-        this.dos.setVisible(true);
-        this.tres.setVisible(true);
-        this.cuatro.setVisible(true);
-        this.cinco.setVisible(true);
-        this.seis.setVisible(true);
-        this.siete.setVisible(true);
-        this.ocho.setVisible(true);
-        this.nueve.setVisible(true);
-        this.cero1.setVisible(false);
-        this.unos.setVisible(false);
-        this.doss.setVisible(false);
-        this.tress.setVisible(false);
-        this.cuatros.setVisible(false);
-        this.cincos.setVisible(false);
-        this.seiss.setVisible(false);
-        this.sietes.setVisible(false);
-        this.ochos.setVisible(false);
-        this.nueves.setVisible(false);
-        this.pantallaLlamadaTeclado.setVisible(false);
-        this.botonteclado.setVisible(false);
-        
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_colgarMouseClicked
 
     private void botontecladoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botontecladoMouseClicked
         // TODO add your handling code here:
-        jTextField1.setText("");
-        
-        this.pantallaLlamada.setVisible(false);
-        this.msj.setVisible(false);
-        this.pantallaLlamadaTeclado.setVisible(true);
-        this.home.setVisible(true);
-        this.pantallaLlamada.setVisible(false);
-        this.colgar.setVisible(false);
-        this.menuios.setVisible(false);
-        this.menullamada.setVisible(false);
-        this.llamada.setVisible(false);
-        this.botonteclado.setVisible(false);
-        
-        this.jTextField1.setVisible(true);
-        this.jTextField1.setBackground(Color.WHITE);
-        this.jTextField1.setForeground(Color.BLACK);
-        this.asterisco.setVisible(false);
-        this.gato.setVisible(false);
-        this.cero.setVisible(false);
-        this.uno.setVisible(false);
-        this.dos.setVisible(false);
-        this.tres.setVisible(false);
-        this.cuatro.setVisible(false);
-        this.cinco.setVisible(false);
-        this.seis.setVisible(false);
-        this.siete.setVisible(false);
-        this.ocho.setVisible(false);
-        this.nueve.setVisible(false);
-        this.cero1.setVisible(true);
-        this.unos.setVisible(true);
-        this.doss.setVisible(true);
-        this.tress.setVisible(true);
-        this.cuatros.setVisible(true);
-        this.cincos.setVisible(true);
-        this.seiss.setVisible(true);
-        this.sietes.setVisible(true);
-        this.ochos.setVisible(true);
-        this.nueves.setVisible(true);
-        this.cancel.setVisible(true);
-        this.lockscreen.setVisible(false);
-        this.unlock.setVisible(false);
+        try {
+            jTextField1.setText("");
+
+            this.pantallaLlamada.setVisible(false);
+            this.msj.setVisible(false);
+            this.pantallaLlamadaTeclado.setVisible(true);
+            this.home.setVisible(true);
+            this.pantallaLlamada.setVisible(false);
+            this.colgar.setVisible(false);
+            this.menuios.setVisible(false);
+            this.menullamada.setVisible(false);
+            this.llamada.setVisible(false);
+            this.botonteclado.setVisible(false);
+
+            this.jTextField1.setVisible(true);
+            this.jTextField1.setBackground(Color.WHITE);
+            this.jTextField1.setForeground(Color.BLACK);
+            this.asterisco.setVisible(false);
+            this.gato.setVisible(false);
+            this.cero.setVisible(false);
+            this.uno.setVisible(false);
+            this.dos.setVisible(false);
+            this.tres.setVisible(false);
+            this.cuatro.setVisible(false);
+            this.cinco.setVisible(false);
+            this.seis.setVisible(false);
+            this.siete.setVisible(false);
+            this.ocho.setVisible(false);
+            this.nueve.setVisible(false);
+            this.cero1.setVisible(true);
+            this.unos.setVisible(true);
+            this.doss.setVisible(true);
+            this.tress.setVisible(true);
+            this.cuatros.setVisible(true);
+            this.cincos.setVisible(true);
+            this.seiss.setVisible(true);
+            this.sietes.setVisible(true);
+            this.ochos.setVisible(true);
+            this.nueves.setVisible(true);
+            this.cancel.setVisible(true);
+            this.lockscreen.setVisible(false);
+            this.unlock.setVisible(false);
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_botontecladoMouseClicked
 
     private void cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseClicked
         // TODO add your handling code here:
-        
-        this.pantallaLlamada.setVisible(true);
-        this.msj.setVisible(false);
-        this.cero1.setVisible(false);
-        this.unos.setVisible(false);
-        this.doss.setVisible(false);
-        this.tress.setVisible(false);
-        this.cuatros.setVisible(false);
-        this.cincos.setVisible(false);
-        this.seiss.setVisible(false);
-        this.sietes.setVisible(false);
-        this.ochos.setVisible(false);
-        this.nueves.setVisible(false);
-        
-        this.jTextField1.setVisible(true);
-        this.jTextField1.setBackground(Color.WHITE);
-        this.jTextField1.setForeground(Color.BLACK);
-        this.asterisco.setVisible(false);
-        this.gato.setVisible(false);
-        this.cero.setVisible(false);
-        this.uno.setVisible(false);
-        this.dos.setVisible(false);
-        this.tres.setVisible(false);
-        this.cuatro.setVisible(false);
-        this.cinco.setVisible(false);
-        this.seis.setVisible(false);
-        this.siete.setVisible(false);
-        this.ocho.setVisible(false);
-        this.nueve.setVisible(false);
-        this.home.setVisible(false);
-        
-        this.llamada.setVisible(false);
-        this.pantallaLlamadaTeclado.setVisible(false);
-        this.home.setVisible(true);
-        this.colgar.setVisible(true);
+        try {
+            this.pantallaLlamada.setVisible(true);
+            this.msj.setVisible(false);
+            this.cero1.setVisible(false);
+            this.unos.setVisible(false);
+            this.doss.setVisible(false);
+            this.tress.setVisible(false);
+            this.cuatros.setVisible(false);
+            this.cincos.setVisible(false);
+            this.seiss.setVisible(false);
+            this.sietes.setVisible(false);
+            this.ochos.setVisible(false);
+            this.nueves.setVisible(false);
+
+            this.jTextField1.setVisible(true);
+            this.jTextField1.setBackground(Color.WHITE);
+            this.jTextField1.setForeground(Color.BLACK);
+            this.asterisco.setVisible(false);
+            this.gato.setVisible(false);
+            this.cero.setVisible(false);
+            this.uno.setVisible(false);
+            this.dos.setVisible(false);
+            this.tres.setVisible(false);
+            this.cuatro.setVisible(false);
+            this.cinco.setVisible(false);
+            this.seis.setVisible(false);
+            this.siete.setVisible(false);
+            this.ocho.setVisible(false);
+            this.nueve.setVisible(false);
+            this.home.setVisible(false);
+
+            this.llamada.setVisible(false);
+            this.pantallaLlamadaTeclado.setVisible(false);
+            this.home.setVisible(true);
+            this.colgar.setVisible(true);
+        } catch (Exception e) {
+        }
+
     }//GEN-LAST:event_cancelMouseClicked
 
     private void cero1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cero1MouseClicked
         // TODO add your handling code here:
-//        if (variables.numeroingr==numero)
-//        {
-        if(conexion!=true)
-        {
-        jTextField1.setText(jTextField1.getText()+"0");
-        variables.menu= jTextField1.getText() + "0";
+        try {
+            if (conexion != true) {
+                jTextField1.setText(jTextField1.getText() + "0");
+                variables.menu = jTextField1.getText() + "0";
+            }
+        } catch (Exception e) {
         }
-        
-//        }
     }//GEN-LAST:event_cero1MouseClicked
 
     private void unosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_unosMouseClicked
         // TODO add your handling code here:
+        int opciones;
+        try {
+            if (conexion == true && enviando == 0) {
+                enviando = 1;
 
-        if(conexion==true&&enviando==0)
-        {
-        enviando=1;
-            
-            int opciones;
-           
-           if(esinicio!=0&&1<=esinicio)
-           {
-               
-               opciones=c.mensajeconexioncaso("1");
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
-               }
-               esinicio=0;
-               variables.menu=variables.menu+1;
-               
-           }
-            
-            
-           else if(esfinal==-1&&1<=menuopciones)
-           {
-               variables.menu=variables.menu+1;
-               opciones=c.mensajeconexion(variables.menu);
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
-               }
-           }
-           else if(esfinal==0)
-           {
-               variables.comentario=JOptionPane.showInputDialog("Comentarios opcionales: ");
-               c.conectarfin(variables.nombre, variables.contacto, variables.comentario, "RESUELTO", variables.menu);
-               LeeTexto.Lee("Adios!");
-               variables.clear();
-        conexion=false;
-        this.msj.setVisible(false);
-        this.home.setVisible(false);
-        this.pantallaLlamada.setVisible(false);
-        this.colgar.setVisible(false);
-        this.menuios.setVisible(false);
-        this.menullamada.setVisible(true);
-        this.llamada.setVisible(true);
-        this.jTextField1.setVisible(true);
-        this.jTextField1.setBackground(Color.WHITE);
-        this.jTextField1.setForeground(Color.BLACK);
-        this.asterisco.setVisible(true);
-        this.gato.setVisible(true);
-        this.cero.setVisible(true);
-        this.uno.setVisible(true);
-        this.dos.setVisible(true);
-        this.tres.setVisible(true);
-        this.cuatro.setVisible(true);
-        this.cinco.setVisible(true);
-        this.seis.setVisible(true);
-        this.siete.setVisible(true);
-        this.ocho.setVisible(true);
-        this.nueve.setVisible(true);
-        this.cero1.setVisible(false);
-        this.unos.setVisible(false);
-        this.doss.setVisible(false);
-        this.tress.setVisible(false);
-        this.cuatros.setVisible(false);
-        this.cincos.setVisible(false);
-        this.seiss.setVisible(false);
-        this.sietes.setVisible(false);
-        this.ochos.setVisible(false);
-        this.nueves.setVisible(false);
-        this.pantallaLlamadaTeclado.setVisible(false);
-        this.botonteclado.setVisible(false);
-        
-               
-           }
-           else
-           {
-               LeeTexto.Lee("Opcion no valida.");               
-           }
-           enviando=0;
-         
+                if (esinicio != 0 && 1 <= esinicio) {
+
+                    opciones = c.mensajeconexioncaso("1");
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                    esinicio = 0;
+                    variables.menu = variables.menu + 1;
+
+                } else if (esfinal == -1 && 1 <= menuopciones) {
+                    variables.menu = variables.menu + 1;
+                    opciones = c.mensajeconexion(variables.menu);
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                } else if (esfinal == 0) {
+                    variables.comentario = JOptionPane.showInputDialog("Comentarios opcionales: ");
+                    c.conectarfin(variables.nombre, variables.contacto, variables.comentario, "RESUELTO", variables.menu);
+                    LeeTexto.Lee("Adios!");
+                    variables.clear();
+                    conexion = false;
+                    this.msj.setVisible(false);
+                    this.home.setVisible(false);
+                    this.pantallaLlamada.setVisible(false);
+                    this.colgar.setVisible(false);
+                    this.menuios.setVisible(false);
+                    this.menullamada.setVisible(true);
+                    this.llamada.setVisible(true);
+                    this.jTextField1.setVisible(true);
+                    this.jTextField1.setBackground(Color.WHITE);
+                    this.jTextField1.setForeground(Color.BLACK);
+                    this.asterisco.setVisible(true);
+                    this.gato.setVisible(true);
+                    this.cero.setVisible(true);
+                    this.uno.setVisible(true);
+                    this.dos.setVisible(true);
+                    this.tres.setVisible(true);
+                    this.cuatro.setVisible(true);
+                    this.cinco.setVisible(true);
+                    this.seis.setVisible(true);
+                    this.siete.setVisible(true);
+                    this.ocho.setVisible(true);
+                    this.nueve.setVisible(true);
+                    this.cero1.setVisible(false);
+                    this.unos.setVisible(false);
+                    this.doss.setVisible(false);
+                    this.tress.setVisible(false);
+                    this.cuatros.setVisible(false);
+                    this.cincos.setVisible(false);
+                    this.seiss.setVisible(false);
+                    this.sietes.setVisible(false);
+                    this.ochos.setVisible(false);
+                    this.nueves.setVisible(false);
+                    this.pantallaLlamadaTeclado.setVisible(false);
+                    this.botonteclado.setVisible(false);
+
+                } else {
+                    LeeTexto.Lee("Opcion no valida.");
+                }
+                enviando = 0;
+
+            }
+        } catch (Exception e) {
         }
-           
-         
-
     }//GEN-LAST:event_unosMouseClicked
 
     private void dossMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dossMouseClicked
         // TODO add your handling code here:
-//        if (variables.numeroingr==numero)
-//        {
-             if(conexion==true&&enviando==0)
-             {
-            enviando=1;
-            
-            int opciones;
-           
-           if(esinicio!=0&&2<=esinicio)
-           {
-               
-               opciones=c.mensajeconexion("2");
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
-               }
-               esinicio=0;
-               variables.menu=variables.menu+2;
-               
-           }
-           else if(esfinal==-1&&2<=menuopciones)
-           {
-               variables.menu=variables.menu+2;
-               opciones=c.mensajeconexion(variables.menu);
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");                              
-               }
-               
-           }
-           else if(esfinal==0)
-           {
-               variables.comentario=JOptionPane.showInputDialog("Comentarios opcionales: ");
-               c.conectarfin(variables.nombre, variables.contacto, variables.comentario, "NO RESUELTO", variables.menu);
-               LeeTexto.Lee("Adios!");
-        conexion=false;
-        this.msj.setVisible(false);
-        this.home.setVisible(false);
-        this.pantallaLlamada.setVisible(false);
-        this.colgar.setVisible(false);
-        this.menuios.setVisible(false);
-        this.menullamada.setVisible(true);
-        this.llamada.setVisible(true);
-        this.jTextField1.setVisible(true);
-        this.jTextField1.setBackground(Color.WHITE);
-        this.jTextField1.setForeground(Color.BLACK);
-        this.asterisco.setVisible(true);
-        this.gato.setVisible(true);
-        this.cero.setVisible(true);
-        this.uno.setVisible(true);
-        this.dos.setVisible(true);
-        this.tres.setVisible(true);
-        this.cuatro.setVisible(true);
-        this.cinco.setVisible(true);
-        this.seis.setVisible(true);
-        this.siete.setVisible(true);
-        this.ocho.setVisible(true);
-        this.nueve.setVisible(true);
-        this.cero1.setVisible(false);
-        this.unos.setVisible(false);
-        this.doss.setVisible(false);
-        this.tress.setVisible(false);
-        this.cuatros.setVisible(false);
-        this.cincos.setVisible(false);
-        this.seiss.setVisible(false);
-        this.sietes.setVisible(false);
-        this.ochos.setVisible(false);
-        this.nueves.setVisible(false);
-        this.pantallaLlamadaTeclado.setVisible(false);
-        this.botonteclado.setVisible(false);
-        
-               
-           }
-           else
-           {
-               LeeTexto.Lee("Opcion no valida.");               
-           }
-           enviando=0;
-         
-        }
-           
+        try {
+            if (conexion == true && enviando == 0) {
+                enviando = 1;
 
-//        }
+                int opciones;
+
+                if (esinicio != 0 && 2 <= esinicio) {
+
+                    opciones = c.mensajeconexion("2");
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                    esinicio = 0;
+                    variables.menu = variables.menu + 2;
+
+                } else if (esfinal == -1 && 2 <= menuopciones) {
+                    variables.menu = variables.menu + 2;
+                    opciones = c.mensajeconexion(variables.menu);
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+
+                } else if (esfinal == 0) {
+                    variables.comentario = JOptionPane.showInputDialog("Comentarios opcionales: ");
+                    c.conectarfin(variables.nombre, variables.contacto, variables.comentario, "NO RESUELTO", variables.menu);
+                    LeeTexto.Lee("Adios!");
+                    conexion = false;
+                    this.msj.setVisible(false);
+                    this.home.setVisible(false);
+                    this.pantallaLlamada.setVisible(false);
+                    this.colgar.setVisible(false);
+                    this.menuios.setVisible(false);
+                    this.menullamada.setVisible(true);
+                    this.llamada.setVisible(true);
+                    this.jTextField1.setVisible(true);
+                    this.jTextField1.setBackground(Color.WHITE);
+                    this.jTextField1.setForeground(Color.BLACK);
+                    this.asterisco.setVisible(true);
+                    this.gato.setVisible(true);
+                    this.cero.setVisible(true);
+                    this.uno.setVisible(true);
+                    this.dos.setVisible(true);
+                    this.tres.setVisible(true);
+                    this.cuatro.setVisible(true);
+                    this.cinco.setVisible(true);
+                    this.seis.setVisible(true);
+                    this.siete.setVisible(true);
+                    this.ocho.setVisible(true);
+                    this.nueve.setVisible(true);
+                    this.cero1.setVisible(false);
+                    this.unos.setVisible(false);
+                    this.doss.setVisible(false);
+                    this.tress.setVisible(false);
+                    this.cuatros.setVisible(false);
+                    this.cincos.setVisible(false);
+                    this.seiss.setVisible(false);
+                    this.sietes.setVisible(false);
+                    this.ochos.setVisible(false);
+                    this.nueves.setVisible(false);
+                    this.pantallaLlamadaTeclado.setVisible(false);
+                    this.botonteclado.setVisible(false);
+
+                } else {
+                    LeeTexto.Lee("Opcion no valida.");
+                }
+                enviando = 0;
+
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_dossMouseClicked
 
     private void tressMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tressMouseClicked
         // TODO add your handling code here:
+        try {
+            if (conexion == true && enviando == 0) {
 
-                if(conexion==true&&enviando==0)
-        {
-        
-            enviando=1;
-            int opciones;
-           
-           if(esinicio!=0&&3<=esinicio)
-           {
-               
-               opciones=c.mensajeconexion("3");
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
-               }
-               esinicio=0;
-               variables.menu=variables.menu+3;
-           }
-            else    if(esfinal==-1&&3<=menuopciones)
-           {
-               variables.menu=variables.menu+3;
-               opciones=c.mensajeconexion(variables.menu);
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
-               }
-           }
-           else
-           {
-               LeeTexto.Lee("Opcion no valida.");               
-           }
-           enviando=0;
-         
+                enviando = 1;
+                int opciones;
+
+                if (esinicio != 0 && 3 <= esinicio) {
+
+                    opciones = c.mensajeconexion("3");
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                    esinicio = 0;
+                    variables.menu = variables.menu + 3;
+                } else if (esfinal == -1 && 3 <= menuopciones) {
+                    variables.menu = variables.menu + 3;
+                    opciones = c.mensajeconexion(variables.menu);
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                } else {
+                    LeeTexto.Lee("Opcion no valida.");
+                }
+                enviando = 0;
+
+            }
+
+        } catch (Exception e) {
         }
-           
-
-//        }
     }//GEN-LAST:event_tressMouseClicked
 
     private void cuatrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cuatrosMouseClicked
         // TODO add your handling code here:
-//        if (variables.numeroingr==numero)
-        if(conexion==true&&enviando==0)
-        {
-        enviando=1;
-            
-            int opciones;
-           
-           if(esinicio!=0&&4<=esinicio)
-           {
-               
-               opciones=c.mensajeconexion("4");
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
-               }
-               esinicio=0;
-               variables.menu=variables.menu+4;
-               
-           }
-            else if(esfinal==-1&&4<=menuopciones)
-           {
-               variables.menu=variables.menu+4;
-               opciones=c.mensajeconexion(variables.menu);
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
-               }
-           }
-           else
-           {
-               LeeTexto.Lee("Opcion no valida.");               
-           }
-         enviando=0;
-        }
-           
+        try {
+            if (conexion == true && enviando == 0) {
+                enviando = 1;
 
-//        }
+                int opciones;
+
+                if (esinicio != 0 && 4 <= esinicio) {
+
+                    opciones = c.mensajeconexion("4");
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                    esinicio = 0;
+                    variables.menu = variables.menu + 4;
+
+                } else if (esfinal == -1 && 4 <= menuopciones) {
+                    variables.menu = variables.menu + 4;
+                    opciones = c.mensajeconexion(variables.menu);
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                } else {
+                    LeeTexto.Lee("Opcion no valida.");
+                }
+                enviando = 0;
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_cuatrosMouseClicked
 
     private void cincosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cincosMouseClicked
         // TODO add your handling code here:
-//        if (variables.numeroingr==numero)
-            if(conexion==true&&enviando ==0)
-            {
-        enviando=1;
-            
-            int opciones;
-           
-           if(esinicio!=0&&5<=esinicio)
-           {
-               
-               opciones=c.mensajeconexion("5");
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
-               }
-               esinicio=0;
-               variables.menu=variables.menu+5;
-               
-           }
-           else if(esfinal==-1&&5<=menuopciones)
-           {
-               variables.menu=variables.menu+5;
-               opciones=c.mensajeconexion(variables.menu);
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
-               }
-           }
-           else
-           {
-               LeeTexto.Lee("Opcion no valida.");               
-           }
-         enviando=0;
+        try {
+            if (conexion == true && enviando == 0) {
+                enviando = 1;
+
+                int opciones;
+
+                if (esinicio != 0 && 5 <= esinicio) {
+
+                    opciones = c.mensajeconexion("5");
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                    esinicio = 0;
+                    variables.menu = variables.menu + 5;
+
+                } else if (esfinal == -1 && 5 <= menuopciones) {
+                    variables.menu = variables.menu + 5;
+                    opciones = c.mensajeconexion(variables.menu);
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                } else {
+                    LeeTexto.Lee("Opcion no valida.");
+                }
+                enviando = 0;
+            }
+        } catch (Exception e) {
         }
-//        }
     }//GEN-LAST:event_cincosMouseClicked
 
     private void seissMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_seissMouseClicked
         // TODO add your handling code here:
+        try {
+            if (conexion == true && enviando == 0) {
+                enviando = 1;
+                int opciones;
 
-       if(conexion==true&&enviando==0)
-        {
-            enviando=1;
-            int opciones;
-           
-           if(esinicio!=0&&6<=esinicio)
-           {
-               
-               opciones=c.mensajeconexion("6");
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");                           
-               }
-               esinicio=0;
-               variables.menu=variables.menu+6;
-               
-               
-           }
-           else if(esfinal==-1&&6<=menuopciones)
-           {
-               variables.menu=variables.menu+6;
-               opciones=c.mensajeconexion(variables.menu);
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
-               }
-           }
-           else
-           {
-               LeeTexto.Lee("Opcion no valida.");               
-           }
-         enviando=0;
+                if (esinicio != 0 && 6 <= esinicio) {
+
+                    opciones = c.mensajeconexion("6");
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                    esinicio = 0;
+                    variables.menu = variables.menu + 6;
+
+                } else if (esfinal == -1 && 6 <= menuopciones) {
+                    variables.menu = variables.menu + 6;
+                    opciones = c.mensajeconexion(variables.menu);
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                } else {
+                    LeeTexto.Lee("Opcion no valida.");
+                }
+                enviando = 0;
+            }
+        } catch (Exception e) {
         }
-//        }
     }//GEN-LAST:event_seissMouseClicked
 
     private void sietesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sietesMouseClicked
         // TODO add your handling code here:
-//        if (variables.numeroingr==numero)
-//        {
-          if(conexion==true&&enviando==0)
-        {
-            enviando=1;
-            int opciones;
-           
-           if(esinicio!=0&&7<=esinicio)
-           {
-               
-               opciones=c.mensajeconexion("7");
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");                            
-               }
-               esinicio=0;
-               variables.menu=variables.menu+7;
-               
-           }
-           else if(esfinal==-1&&7<=menuopciones)
-           {
-               variables.menu=variables.menu+7;
-               opciones=c.mensajeconexion(variables.menu);
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
-               }
-           }
-           else
-           {
-               LeeTexto.Lee("Opcion no valida.");               
-           }
-         enviando=0;
+        try {
+            if (conexion == true && enviando == 0) {
+                enviando = 1;
+                int opciones;
+
+                if (esinicio != 0 && 7 <= esinicio) {
+
+                    opciones = c.mensajeconexion("7");
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                    esinicio = 0;
+                    variables.menu = variables.menu + 7;
+
+                } else if (esfinal == -1 && 7 <= menuopciones) {
+                    variables.menu = variables.menu + 7;
+                    opciones = c.mensajeconexion(variables.menu);
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                } else {
+                    LeeTexto.Lee("Opcion no valida.");
+                }
+                enviando = 0;
+            }
+        } catch (Exception e) {
         }
-//        }
     }//GEN-LAST:event_sietesMouseClicked
 
     private void ochosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ochosMouseClicked
         // TODO add your handling code here:
-              if(conexion==true&&enviando==0)
-        {
-        
-            enviando=1;
-            int opciones;
-           
-           if(esinicio!=0&&8<=esinicio)
-           {
-               
-               opciones=c.mensajeconexion("8");
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");                             
-               }
-               esinicio=0;
-               variables.menu=variables.menu+8;
-           }
-           else if(esfinal==-1&&8<=menuopciones)
-           {
-               variables.menu=variables.menu+8;
-               opciones=c.mensajeconexion(variables.menu);
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
-               }
-               
-           }
-           else
-           {
-               LeeTexto.Lee("Opcion no valida.");               
-           }
-           enviando=0;
-         
-        }
+        try {
+            if (conexion == true && enviando == 0) {
 
+                enviando = 1;
+                int opciones;
+
+                if (esinicio != 0 && 8 <= esinicio) {
+
+                    opciones = c.mensajeconexion("8");
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                    esinicio = 0;
+                    variables.menu = variables.menu + 8;
+                } else if (esfinal == -1 && 8 <= menuopciones) {
+                    variables.menu = variables.menu + 8;
+                    opciones = c.mensajeconexion(variables.menu);
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+
+                } else {
+                    LeeTexto.Lee("Opcion no valida.");
+                }
+                enviando = 0;
+
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_ochosMouseClicked
 
     private void nuevesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nuevesMouseClicked
         // TODO add your handling code here:
+        try {
+            if (conexion == true && enviando == 0) {
 
-      if(conexion==true&&enviando==0)
-        {
-        
-            enviando=1;
-            int opciones;
-         
-           if(esinicio!=0&&9<=esinicio)
-           {
-               
-               opciones=c.mensajeconexion("9");
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");                            
-               }
-               esinicio=0;
-               variables.menu=variables.menu+9;
-           }  
-           else if(esfinal==-1&&9<=menuopciones)
-           {
-               variables.menu=variables.menu+9;
-               opciones=c.mensajeconexion(variables.menu);
-               menuopciones=opciones;
-               if(opciones==0)
-               {
-                   esfinal=menuopciones=0;
-                   LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");               
-               }
-           }
-           else
-           {
-               LeeTexto.Lee("Opcion no valida.");               
-           }
-         enviando=0;
+                enviando = 1;
+                int opciones;
+
+                if (esinicio != 0 && 9 <= esinicio) {
+
+                    opciones = c.mensajeconexion("9");
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                    esinicio = 0;
+                    variables.menu = variables.menu + 9;
+                } else if (esfinal == -1 && 9 <= menuopciones) {
+                    variables.menu = variables.menu + 9;
+                    opciones = c.mensajeconexion(variables.menu);
+                    menuopciones = opciones;
+                    if (opciones == 0) {
+                        esfinal = menuopciones = 0;
+                        LeeTexto.Lee("Gracias por utilizar nuestro servicio. ¿Le hemos resuelto su duda?. Si. marque 1. No marque 2");
+                    }
+                } else {
+                    LeeTexto.Lee("Opcion no valida.");
+                }
+                enviando = 0;
+            }
+        } catch (Exception e) {
         }
     }//GEN-LAST:event_nuevesMouseClicked
 
     private void msjMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_msjMouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, variables.menu);
+        try {
+            JOptionPane.showMessageDialog(null, variables.menu);
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_msjMouseClicked
 
     private void pantallaLlamadaTecladoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pantallaLlamadaTecladoMouseClicked
         // TODO add your handling code here:
-        this.home.setVisible(false);
+        try {
+            this.home.setVisible(false);
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_pantallaLlamadaTecladoMouseClicked
 
-    
     /**
      * @param args the command line arguments
      */

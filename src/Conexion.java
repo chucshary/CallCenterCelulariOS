@@ -25,7 +25,7 @@ public class Conexion {
        String mensaje="",mensaje2="";
         try {
             int puerto = 10578;
-            sk = new Socket("192.168.0.5", puerto);
+            sk = new Socket(variables.getIpServer(), puerto);
             envio = new DataOutputStream(sk.getOutputStream());
             recibo = new DataInputStream(sk.getInputStream());
             recibo2 = new DataInputStream(sk.getInputStream());
