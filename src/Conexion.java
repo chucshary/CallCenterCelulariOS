@@ -115,6 +115,7 @@ public void audio(String texto)
             envio.writeUTF(contacto);
             envio.writeUTF(resultado);
             envio.writeUTF(comentario);
+            sk.close();
             
             
         }catch(IOException ex) {

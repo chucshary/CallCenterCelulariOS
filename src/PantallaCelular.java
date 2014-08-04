@@ -651,6 +651,7 @@ public class PantallaCelular extends javax.swing.JFrame {
         //Ahora se supone que cuando" llame al servidor" invocare a la clase conectar
         //Primero creamos el objeto de dicha clase (osease el que nos da acceso a esa clase). Le llamaremos "c"
         try {
+            
             this.home.setVisible(false);
             this.msj.setVisible(false);
             this.colgar.setVisible(true);
@@ -777,7 +778,9 @@ public class PantallaCelular extends javax.swing.JFrame {
         try {
             LeeTexto.Lee("Adios!");
             variables.clear();
-            conexion = false;
+            conexion = false;esfinal = -1;
+            menuopciones = 9;enviando = 0;
+            esinicio = 0;conexion = false;
             esinicio = esfinal = 0;
             this.msj.setVisible(false);
             this.home.setVisible(false);
@@ -950,7 +953,10 @@ public class PantallaCelular extends javax.swing.JFrame {
                     c.conectarfin(variables.nombre, variables.contacto, variables.comentario, "RESUELTO", variables.menu);
                     LeeTexto.Lee("Adios!");
                     variables.clear();
-                    conexion = false;
+                    conexion = false;esfinal = -1;
+                    menuopciones = 9;enviando = 0;
+                    esinicio = 0;conexion = false;
+                    esinicio = esfinal = 0;
                     this.msj.setVisible(false);
                     this.home.setVisible(false);
                     this.pantallaLlamada.setVisible(false);
@@ -1028,7 +1034,11 @@ public class PantallaCelular extends javax.swing.JFrame {
                     variables.comentario = JOptionPane.showInputDialog("Comentarios opcionales: ");
                     c.conectarfin(variables.nombre, variables.contacto, variables.comentario, "NO RESUELTO", variables.menu);
                     LeeTexto.Lee("Adios!");
-                    conexion = false;
+                    variables.clear();
+                    conexion = false;esfinal = -1;
+                    menuopciones = 9;enviando = 0;
+                    esinicio = 0;conexion = false;
+                    esinicio = esfinal = 0;
                     this.msj.setVisible(false);
                     this.home.setVisible(false);
                     this.pantallaLlamada.setVisible(false);
