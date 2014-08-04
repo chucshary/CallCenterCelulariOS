@@ -84,43 +84,7 @@ public class ip extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void validarIP() {
-        int v = 0;
-        String IP = "";
-        try {
-            IP = jTextField1.getText();
-            if (IP.length() > 15) {
-                JOptionPane.showMessageDialog(null, "Ingrese una IP valido", "IP NO VALIDO", JOptionPane.INFORMATION_MESSAGE);
-                jTextField1.setText("");
-                jTextField1.requestFocus();
-            } else {
-                if (!IP.matches("^.{0}\\d{3}.*$")) {
-                    IP = IP.substring(0, 0) + "000" + IP.substring(3);
-                    v = 1;
-                }
-                if (!".".equals(IP.substring(3, 4)) || !".".equals(IP.substring(7, 8)) || !".".equals(IP.substring(11, 12))) {
-                    JOptionPane.showMessageDialog(null, "Verifique la Direccion IP", "Verificar", JOptionPane.ERROR_MESSAGE);
-                    JOptionPane.showMessageDialog(null, IP.substring(3, 4));
-                }
-                if (!IP.matches("^.{4}\\d{3}.*$")) {
-                    IP = IP.substring(0, 4) + "000" + IP.substring(7);
-                    v = 1;
-                }
-                if (!IP.matches("^.{8}\\d{3}.*$")) {
-                    IP = IP.substring(0, 8) + "000" + IP.substring(11);
-                    v = 1;
-                }
-                if (!IP.matches("^.{12}\\d{3}.*$")) {
-                    IP = IP.substring(0, 12) + "000" + IP.substring(15);
-                    v = 1;
-                }
-                if (v == 1) {
-                    JOptionPane.showMessageDialog(null, IP + " Invalido");
-                } else if (v != 1) {
-                    variables.setIpServer(IP);
-                }
-            }
-        } catch (Exception e) {
-        }
+
     }
 
 
@@ -134,10 +98,33 @@ public class ip extends javax.swing.JFrame {
                 if ("".equals(jTextField1.getText())) {
                     JOptionPane.showMessageDialog(null, "Ingrese una IP");
                 } else {
-                    validarIP();
-                    if ("".equals(variables.getIpServer())) {
-                        JOptionPane.showMessageDialog(null, "IP invalida");
-                    } else {
+                    CasosIP casos = new CasosIP(jTextField1);
+                    casos.eleccion();
+                    switch (casos.x) {
+                        case 1:
+                            casos.NoIP();
+                            break;
+                        case 2:
+                            casos.IP_15();
+                            break;
+                        case 3:
+                            casos.IP_14();
+                            break;
+                        case 4:
+                            casos.IP_13();
+                            break;
+                        case 5:
+                            casos.IP_12();
+                            break;
+                        case 6:
+                            casos.IP_11();
+                            break;
+                    }
+                    if ("".equals(variables.getIpServer()) && casos.x != 1) {
+                        jTextField1.setText("");
+                        jTextField1.requestFocus();
+
+                    } else if (!"".equals(variables.getIpServer()) && casos.x != 1) {
                         bootLogo logo = new bootLogo();
                         logo.show();
                         this.hide();

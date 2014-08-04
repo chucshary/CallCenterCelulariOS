@@ -60,8 +60,7 @@ public class Conexion {
         }catch(IOException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE,null, ex);
         }
-        //Parte de Lee
-        //En este metodo se supone que se hara conexion con el servidor 
+        //En este metodo se hara conexion con el servidor 
         //Se le enviara el String numero a  el metodo *respuesta* en la clase RespuestaResultado del 
         //servidor en el Package MetodoConexion y nos devolvera las respuestas
         //en las variables menu y opciones
@@ -80,8 +79,8 @@ public class Conexion {
         }catch(IOException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE,null, ex);
         }
-        //Parte de Lee
-        //En este metodo se supone que se hara conexion con el servidor 
+     
+        //En este metodose hara conexion con el servidor 
         //Se le enviara el String numero a  el metodo *respuesta* en la clase RespuestaResultado del 
         //servidor en el Package MetodoConexion y nos devolvera las respuestas
         //en las variables menu y opciones
@@ -121,11 +120,8 @@ public void audio(String texto)
         }catch(IOException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE,null, ex);
         }
-        //Parte de Lee
-        //Aqui se supone que enviaras estos datos a el metodo *fin
+        //Aqui se enviara estos datos a el metodo *fin
         //de la clase RespuestaResultado del package MetodosConexion
         //Para que lo inserte en la base de datos~
-        
-       
     }
 }
